@@ -1,0 +1,45 @@
+# @seealso https://www.kernel.org/pub/software/scm/git/docs/git-config.html
+
+[include]
+	# include external gitconfig file (requires git 1.7.10+)
+	# typically, user.name and user.email is configured.
+	path = ~/.gitconfig.secret
+
+[core]
+    excludesfile = ~/.gitignore
+
+    # path name issue
+    quotepath = false
+
+    # editor
+    editor = vim
+
+[pager]
+    log = less -FE
+
+[alias]
+    list-conflicts = diff --name-only --diff-filter=U
+
+	wdiff = diff --color-words
+	wshow = show --color-words
+
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	ui = auto
+
+[merge]
+	conflictstyle = diff3
+
+[rebase]
+	autosquash = true
+
+[branch]
+	# Make all new branches to automatically use rebase rather than merge, on pull
+	autosetuprebase = always
+
+[submodule]
+	# Git 2.15+: Update submodules recursively when pulling changes
+	recurse = true
