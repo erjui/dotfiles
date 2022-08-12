@@ -1,0 +1,37 @@
+# Custom config for VIM
+
+" basic setting
+set fileencodings=utf8,euc-kr
+set number
+set ruler
+
+" syntax highlighting
+syntax on
+filetype indent on
+set showmatch
+
+" indent
+set backspace=indent,eol,start
+set autoindent
+set cindent
+set smartindent
+
+set ts=4
+set shiftwidth=4
+set expandtab " use space rather than tab
+set smarttab
+
+" search
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" history
+set history=10000
+set undolevels=1000
+
+" theme
+set background=dark
+colorscheme desert
+
