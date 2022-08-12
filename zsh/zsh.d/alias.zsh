@@ -28,6 +28,10 @@ alias cp='nocorrect cp -iv'
 alias mv='nocorrect mv -iv'
 alias rm='nocorrect rm -iv'
 
+alias md='mkdir -p'
+alias rd='rmdir'
+
+# TODO: python virtual environment
 # anaconda
 alias ca='conda activate'
 alias cel='conda env list'
