@@ -22,6 +22,10 @@ funciton dirc() {
         ( z $1 && pwdc || echo "Failed to find the path: ${1}" )
 } # LINUX-ONLY
 
+# vim: use neovim as default
+alias vim='nvim'
+alias vi='vim'
+
 alias py='python'
 
 alias cp='nocorrect cp -iv'
