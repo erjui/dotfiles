@@ -1,4 +1,4 @@
-# Custom config for VIM
+" Custom config for VIM
 
 " basic setting
 set fileencodings=utf8,euc-kr
