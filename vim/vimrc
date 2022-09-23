@@ -35,4 +35,12 @@ set undolevels=1000
 set background=dark
 colorscheme desert
 
+" key mapping
+let mapleader=','
+let maplocalleader=','
+
+nnoremap <leader>: :
+
+nnoremap <silent> <leader>h :nohlsearch<CR>
+
 source ~/.vim/plugins.vim
