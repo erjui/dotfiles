@@ -21,6 +21,7 @@ alias pwdc='pwd | copy' # LINUX-ONLY
 funciton dirc() {
         ( z $1 && pwdc || echo "Failed to find the path: ${1}" )
 } # LINUX-ONLY
+alias rsyncgit='rsync -vhra --include='\''**.gitignore'\'' --exclude='\''/.git'\'' --filter='\'':- .gitignore'\'' --delete-after'
 
 # vim: use neovim as default
 alias vim='nvim'
