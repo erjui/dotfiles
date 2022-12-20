@@ -20,6 +20,7 @@ echo -e "Start installing basic APT packages..."
 sudo apt install -y htop nvtop vim curl tmux git
 sudo apt install -y tig exa bat fd-find ripgrep direnv sshpass
 sudo apt install -y asciinema neofetch ncal
+sudo apt install -y xclip fzf
 
 # python symbolic link
 echo -e "Update python symbolic link..."
