@@ -8,6 +8,9 @@ ln -s ~/dotfiles/zsh/zprofile ~/.zprofile
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 
+ln -s ~/dotfiles/zsh/fzf ~/.fzf
+ln -s ~/dotfiles/zsh/fzf.zsh ~/.fzf.zsh
+
 # vim symlink
 # ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc

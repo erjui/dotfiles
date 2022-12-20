@@ -127,3 +127,7 @@ unset __conda_setup
 
 source ~/dotfiles/zsh/zsh.d/alias.zsh
 source ~/dotfiles/zsh/zsh.d/envs.zsh
+
+# fzf settings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
