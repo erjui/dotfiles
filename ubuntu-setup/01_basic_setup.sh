@@ -17,13 +17,13 @@ install_basic_packages() {
         ncal xclip \
     )
 
+    sudo apt update
+    sudo apt upgrade
     for package in ${packages[@]}; do
         sudo apt install -y $package
     done
 }
 
-sudo apt update
-sudo apt upgrade
 
 # system check
 echo -e "${RED}uname -a\n${NC}`uname -a`\n"
