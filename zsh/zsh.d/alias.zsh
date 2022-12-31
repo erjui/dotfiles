@@ -11,7 +11,7 @@ then
         echo "The systme will be off after 1 seconds 🔥" && sleep 1
         /usr/sbin/poweroff
     }
-    spoweroff='sudo poweroff'
+    alias spoweroff='sudo poweroff'
 fi
 
 # copy and paste
