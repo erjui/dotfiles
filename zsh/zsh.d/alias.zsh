@@ -3,28 +3,40 @@
 
 alias reload!='source ~/.zshrc'
 alias c='clear'
-function poweroff() {
+if command -v poweroff &> /dev/null
+then
+    poweroff() {
         echo "The systme will be off after 3 seconds 🔥🔥🔥" && sleep 1
         echo "The systme will be off after 2 seconds 🔥🔥" && sleep 1
         echo "The systme will be off after 1 seconds 🔥" && sleep 1
         /usr/sbin/poweroff
-} # LINUX-ONLY
-spoweroff='sudo poweroff' # LINUX-ONLY
+    }
+    spoweroff='sudo poweroff'
+fi
 
 # copy and paste
-alias copy='xclip -selection clipboard' # LINUX-ONLY
-alias copy!='xclip -o' # LINUX-ONLY
+if command -v xclip &> /dev/null
+then
+    alias copy='xclip -selection clipboard'
+    alias copy!='xclip -o'
+    alias pwdc='pwd | copy'
+fi
 
 # directory management
-alias open='xdg-open .' # LINUX-ONLY
-alias pwdc='pwd | copy' # LINUX-ONLY
-funciton dirc() {
-        ( z $1 && pwdc || echo "Failed to find the path: ${1}" )
-} # LINUX-ONLY
+if command -v xdg-open &> /dev/null
+then
+    alias open='xdg-open .'
+    funciton dirc() {
+        ( z $1 && pwdc || echo "Failed to find the path: ${1}" ) # TODO: check fasd exist for 'z'
+    }
+fi
 alias rsyncgit='rsync -vhra --include='\''**.gitignore'\'' --exclude='\''/.git'\'' --filter='\'':- .gitignore'\'' --delete-after'
 
 # vim: use neovim as default
-alias vim='nvim'
+if command -v nvim &> /dev/null
+then
+    alias vim='nvim'
+fi
 alias vi='vim'
 
 alias py='python'
@@ -43,45 +55,68 @@ alias cel='conda env list'
 alias cl='conda list'
 
 # htop
-alias top='htop'
-alias topc='htop -s PERCENT_CPU'
-alias topm='htop -s PERCENT_MEM'
+if command -v htop &> /dev/null
+then
+    alias top='htop'
+    alias topc='htop -s PERCENT_CPU'
+    alias topm='htop -s PERCENT_MEM'
+fi
 
 # exa
-alias ls='exa -F'
-alias lt='exa -T'
-alias ltl='exa -T -L'
+if command -v exa &> /dev/null
+then
+    alias ls='exa -F'
+    alias lt='exa -T'
+    alias ltl='exa -T -L'
+fi
 alias l='ls -lah'
 alias la='ls -lAh'
 alias ll='ls -lh'
 
 # bat
-alias bat='batcat'
+if command -v batcat &> /dev/null
+then
+    alias cat='batcat'
+fi
 
 # fd
-alias fd='fdfind'
+if command -v fdfind &> /dev/null
+then
+    alias fd='fdfind'
+else
+    alias fd='find'
+fi
 
 # tmux
-alias tn='tmux new -s'
-alias tl='tmux list-session'
-alias ta='tmux attach-session -t'
-alias tk='tmux kill-session -t'
-alias tka='tmux kill-server'
+if command -v tmux &> /dev/null
+then
+    alias tn='tmux new -s'
+    alias tl='tmux list-session'
+    alias ta='tmux attach-session -t'
+    alias tk='tmux kill-session -t'
+    alias tka='tmux kill-server'
+fi
 
 # gpustat
-alias gs='gpustat -pi'
+if command -v gpustat &> /dev/null
+then
+    alias gs='gpustat -pi'
+fi
 
 # fasd
-alias a='fasd -a'
-alias s='fasd -si'
-alias d='fasd -d'
-alias f='fasd -f'
-alias sd='fasd -sid'
-alias sf='fasd -sif'
-alias z='fasd_cd -d'
-alias zz='fasd_cd -d -i'
-alias v='f -e vim'
-alias o='a -e xdg-open'
+if command -v fasd &> /dev/null
+then
+    alias a='fasd -a'
+    alias s='fasd -si'
+    alias d='fasd -d'
+    alias f='fasd -f'
+    alias sd='fasd -sid'
+    alias sf='fasd -sif'
+    alias z='fasd_cd -d'
+    alias zz='fasd_cd -d -i'
+    alias v='f -e vim'
+    alias o='a -e xdg-open'
+fi
 
 # git
 alias g=git
