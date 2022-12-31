@@ -15,6 +15,10 @@ echo -e "${RED}lspci -vnn | grep VGA -A 12\n${NC}`lspci -vnn | grep VGA -A 12`\n
 echo -e "Type any keyboard input to continue...\n"
 read
 
+# system update
+sudo apt update
+sudo apt upgrade
+
 # basic apt packages
 echo -e "Start installing basic APT packages..."
 sudo apt install -y htop nvtop vim curl tmux git
