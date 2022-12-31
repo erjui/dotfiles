@@ -2,18 +2,20 @@
 
 safe_link(){
     local src=$1
-    local dest=$2
+    local dst=$2
 
-    if [ -f $dest ]; then
-        read -p "$dest already exists. Override? [y/n] " -n 1 -r
+    if [ -f $dst ]; then
+        read -p "$dst already exists. Override? [y/n] " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            rm $dest
-            ln -s $src $dest
+            rm $dst
+            ln -s $src $dst
         else
-            echo "Skip $dest"
-            return
+            echo "Skip $dst"
         fi
+    else
+        echo "Link $src to $dst"
+        ln -s $src $dst
     fi
 }
 
