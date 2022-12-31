@@ -5,6 +5,26 @@ YELLOW='\033[0;33m'
 NC='\033[0m'
 echo -e "${RED}| ${YELLOW}01_basic_setup.sh begin ${RED}| ${NC}\n"
 
+install_basic_packages() {
+    local packages=( \
+        build-essential man lspci curl \
+        htop nvtop \
+        vim tmux \
+        git tig \
+        exa bat fd-find ripgrep fzf \
+        direnv sshpass \
+        asciinema neofetch \
+        ncal xclip \
+    )
+
+    for package in ${packages[@]}; do
+        sudo apt install -y $package
+    done
+}
+
+sudo apt update
+sudo apt upgrade
+
 # system check
 echo -e "${RED}uname -a\n${NC}`uname -a`\n"
 echo -e "${RED}hostnamectl \n${NC}`hostnamectl`\n"
@@ -17,11 +37,8 @@ read
 
 # basic apt packages
 echo -e "Start installing basic APT packages..."
-sudo apt install -y build-essential
-sudo apt install -y htop nvtop vim curl tmux git
-sudo apt install -y tig exa bat fd-find ripgrep direnv sshpass
-sudo apt install -y asciinema neofetch ncal
-sudo apt install -y xclip fzf
+# TODO: build exa with git feature
+install_basic_packages
 
 # python symbolic link
 echo -e "Update python symbolic link..."
