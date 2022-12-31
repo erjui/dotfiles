@@ -9,8 +9,8 @@ echo -e "${RED}| ${YELLOW}04_custom_script.sh begin ${RED}| ${NC}\n"
 sudo apt install -y cpufrequtils xclip lmsensor hwinfo sshpass
 echo -e "" >> ~/.profile
 echo -e "# Custom Scripts" >> ~/.profile
-echo -e "export PATH=\$PATH:/home/seongjae/Documents/scripts/" >> ~/.profile
-echo -e "export SCRIPT_PATH=/home/seongjae/Documents/scripts/" >> ~/.profile
+echo -e "export PATH=\$PATH:$HOME/Documents/scripts/" >> ~/.profile # TODO: fix script path further
+echo -e "export SCRIPT_PATH=$HOME/Documents/scripts/" >> ~/.profile
 # sudo dpkg-reconfigure dash
 sudo dpkg-reconfigure bash # TODO: check 
 
