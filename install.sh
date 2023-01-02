@@ -4,7 +4,7 @@ safe_link(){
     local src=$1
     local dst=$2
 
-    if [ -f $dst ]; then
+    if [[ -f $dst ]] || [[ -d $dst ]]; then
         read -p "$dst already exists. Override? [y/n] " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -34,9 +34,10 @@ safe_link ~/dotfiles/zsh ~/.zsh
 safe_link ~/dotfiles/zsh/fzf ~/.fzf
 safe_link ~/dotfiles/zsh/fzf.zsh ~/.fzf.zsh
 
-# vim symlink
+# vim, neovim symlink
 safe_link ~/dotfiles/vim/vimrc ~/.vimrc
 safe_link ~/dotfiles/vim ~/.vim
+safe_link ~/dotfiles/nvim ~/.config/nvim/
 
 # tmux symlink
 safe_link ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
