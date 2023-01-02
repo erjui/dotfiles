@@ -22,28 +22,32 @@ safe_link(){
     fi
 }
 
+DOTFILES=$(dirname $(readlink -f $0))
+echo "dotfile absolute path: $DOTFILES"
+
 
 # zsh symlink
-safe_link ~/dotfiles/zsh/zlogin ~/.zlogin
-safe_link ~/dotfiles/zsh/zlogout ~/.zlogout
-safe_link ~/dotfiles/zsh/zprofile ~/.zprofile
-safe_link ~/dotfiles/zsh/zshrc ~/.zshrc
-safe_link ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
-safe_link ~/dotfiles/zsh ~/.zsh
+safe_link $DOTFILES/zsh/zlogin ~/.zlogin
+safe_link $DOTFILES/zsh/zlogout ~/.zlogout
+safe_link $DOTFILES/zsh/zprofile ~/.zprofile
+safe_link $DOTFILES/zsh/zshrc ~/.zshrc
+safe_link $DOTFILES/zsh/p10k.zsh ~/.p10k.zsh
+safe_link $DOTFILES/zsh ~/.zsh
 
-safe_link ~/dotfiles/zsh/fzf ~/.fzf
-safe_link ~/dotfiles/zsh/fzf.zsh ~/.fzf.zsh
+safe_link $DOTFILES/zsh/fzf ~/.fzf
+safe_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
 
 # vim, neovim symlink
-safe_link ~/dotfiles/vim/vimrc ~/.vimrc
-safe_link ~/dotfiles/vim ~/.vim
-safe_link ~/dotfiles/nvim ~/.config/nvim/
+safe_link $DOTFILES/vim/vimrc ~/.vimrc
+safe_link $DOTFILES/vim ~/.vim
+safe_link $DOTFILES/nvim ~/.config/nvim/
 
 # tmux symlink
-safe_link ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-safe_link ~/dotfiles/tmux ~/.tmux
+safe_link $DOTFILES/tmux/tmux.conf ~/.tmux.conf
+safe_link $DOTFILES/tmux ~/.tmux
 
 # git symlink
-safe_link ~/dotfiles/git/gitconfig ~/.gitconfig
-safe_link ~/dotfiles/git/gitignore ~/.gitignore
+safe_link $DOTFILES/git/gitconfig ~/.gitconfig
+safe_link $DOTFILES/git/gitignore ~/.gitignore
+
 
