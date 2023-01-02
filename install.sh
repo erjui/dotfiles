@@ -44,7 +44,7 @@ safe_link $DOTFILES/tmux/tmux.conf ~/.tmux.conf
 safe_link $DOTFILES/tmux ~/.tmux
 
 # git symlink
-safe_link $DOTFILES/git/gitconfig ~/.gitconfig
-safe_link $DOTFILES/git/gitignore ~/.gitignore
+safe_link $DOTFILES/git/.gitconfig ~/.gitconfig
+safe_link $DOTFILES/git/.gitignore ~/.gitignore
 
 
