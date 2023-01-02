@@ -15,6 +15,9 @@ safe_link(){
         fi
     else
         echo "Link $src to $dst"
+        if [[ -d $src ]]; then
+            mkdir -p $dst
+        fi
         ln -s $src $dst
     fi
 }
@@ -26,13 +29,16 @@ safe_link ~/dotfiles/zsh/zlogout ~/.zlogout
 safe_link ~/dotfiles/zsh/zprofile ~/.zprofile
 safe_link ~/dotfiles/zsh/zshrc ~/.zshrc
 safe_link ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
+safe_link ~/dotfiles/zsh ~/.zsh
 
 safe_link ~/dotfiles/zsh/fzf ~/.fzf
 safe_link ~/dotfiles/zsh/fzf.zsh ~/.fzf.zsh
 
 # vim symlink
 safe_link ~/dotfiles/vim/vimrc ~/.vimrc
+safe_link ~/dotfiles/vim ~/.vim
 
 # tmux symlink
 safe_link ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+safe_link ~/dotfiles/tmux ~/.tmux
 
