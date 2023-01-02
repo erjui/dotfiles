@@ -15,9 +15,6 @@ safe_link(){
         fi
     else
         echo "Link $src to $dst"
-        if [[ -d $src ]]; then
-            mkdir -p $dst
-        fi
         ln -s $src $dst
     fi
 }
@@ -40,7 +37,7 @@ safe_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
 # vim, neovim symlink
 safe_link $DOTFILES/vim/vimrc ~/.vimrc
 safe_link $DOTFILES/vim ~/.vim
-safe_link $DOTFILES/nvim ~/.config/nvim/
+safe_link $DOTFILES/nvim ~/.config/nvim
 
 # tmux symlink
 safe_link $DOTFILES/tmux/tmux.conf ~/.tmux.conf
