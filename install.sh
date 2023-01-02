@@ -43,3 +43,7 @@ safe_link ~/dotfiles/nvim ~/.config/nvim/
 safe_link ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 safe_link ~/dotfiles/tmux ~/.tmux
 
+# git symlink
+safe_link ~/dotfiles/git/gitconfig ~/.gitconfig
+safe_link ~/dotfiles/git/gitignore ~/.gitignore
+
