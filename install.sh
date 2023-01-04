@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # REMIND. bash dotfiles are not supported yet.
 
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
 safe_link(){
     local src=$1
     local dst=$2
@@ -53,7 +57,24 @@ symlink () {
     safe_link $DOTFILES/git/.gitignore ~/.gitignore
 }
 
+set_git_secret_config () {
+    if [ ! -f ~/.gitconfig.secret ];
+    then
+        touch ~/.gitconfig.secret
+
+        echo -ne "${YELLOW}Enter your name: ${NC}"
+        read username
+        echo -ne "${YELLOW}Enter your email: ${NC}"
+        read useremail
+
+        git config --file ~/.gitconfig.secret user.name "$username"
+        git config --file ~/.gitconfig.secret user.email "$useremail"
+    else
+        echo -e "${RED} ~/.gitconfig.secret already exists. ${NC}"
+    fi
+}
 
 
 symlink
+set_git_secret_config
 
