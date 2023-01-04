@@ -218,6 +218,7 @@ alias glp=_git_log_prettily
 alias glum='git pull upstream $(git_main_branch)'
 alias gm='git merge'
 alias gma='git merge --abort'
+alias gmc='git merge --continue'
 alias gmom='git merge origin/$(git_main_branch)'
 alias gmtl='git mergetool --no-prompt'
 alias gmtlvim='git mergetool --no-prompt --tool=vimdiff'
