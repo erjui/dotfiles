@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# REMIND. bash dotfiles are not supported yet.
 
 safe_link(){
     local src=$1
