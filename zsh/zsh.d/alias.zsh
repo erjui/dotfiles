@@ -1,5 +1,4 @@
 # Custom aliases for ZSH
-# TODO: check existence of each command
 
 alias reload!='source ~/.zshrc'
 alias c='clear'
