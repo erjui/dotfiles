@@ -17,6 +17,7 @@ install_basic_packages() {
         ncal xclip \
     )
 
+    # system update
     sudo apt update
     sudo apt upgrade
     for package in ${packages[@]}; do
@@ -34,10 +35,6 @@ echo -e "${RED}lspci -vnn | grep VGA -A 12\n${NC}`lspci -vnn | grep VGA -A 12`\n
 # sudo dmidecode
 echo -e "Type any keyboard input to continue...\n"
 read
-
-# system update
-sudo apt update
-sudo apt upgrade
 
 # basic apt packages
 echo -e "Start installing basic APT packages..."
