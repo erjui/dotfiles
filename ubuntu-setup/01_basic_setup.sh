@@ -7,7 +7,7 @@ echo -e "${RED}| ${YELLOW}01_basic_setup.sh begin ${RED}| ${NC}\n"
 
 install_basic_packages() {
     local packages=( \
-        build-essential man lspci curl \
+        build-essential man lspci curl less tree \
         htop nvtop \
         vim tmux \
         git tig \
