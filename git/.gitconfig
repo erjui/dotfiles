@@ -22,3 +22,6 @@
 
 [submodule]
 	recurse = true
+
+[credential]
+	helper = store
