@@ -125,8 +125,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-source ~/dotfiles/zsh/zsh.d/alias.zsh
-source ~/dotfiles/zsh/zsh.d/envs.zsh
+source ~/.zsh/zsh.d/alias.zsh
+source ~/.zsh/zsh.d/envs.zsh
 
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
