@@ -21,7 +21,7 @@ install_basic_packages() {
     echo -e "Install Basic Packages..."
     local packages=( \
         build-essential man lspci curl less tree \
-        htop nvtop \
+        htop iotop nvtop gpustat \
         vim tmux \
         tig \
         exa bat fd-find ripgrep fzf \
