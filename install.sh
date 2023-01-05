@@ -84,7 +84,11 @@ set_git_secret_config () {
     fi
 }
 
+update_submodule() {
+    cd $DOTFILES
+    git submodule update --init --recursive
+}
 
 symlink
 set_git_secret_config
-
+update_submodule
