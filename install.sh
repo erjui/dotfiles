@@ -21,7 +21,12 @@ safe_link(){
     elif [[ -L $dst ]]; then # if broken symlink
         read -p "$dst is broken symlink. Override? [y/n] " -n 1 -r
         echo
-        echo "Skip $dst"
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            rm $dst
+            ln -s $src $dst
+        else
+            echo "Skip $dst"
+        fi
     else
         echo "Link $src to $dst"
         ln -s $src $dst
