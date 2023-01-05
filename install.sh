@@ -67,6 +67,7 @@ set_git_secret_config () {
     then
         touch ~/.gitconfig.secret
 
+        echo -e "${YELLOW}Set git secret config${NC}"
         echo -ne "${YELLOW}Enter your name: ${NC}"
         read username
         echo -ne "${YELLOW}Enter your email: ${NC}"
@@ -75,7 +76,8 @@ set_git_secret_config () {
         git config --file ~/.gitconfig.secret user.name "$username"
         git config --file ~/.gitconfig.secret user.email "$useremail"
     else
-        echo -e "${RED} ~/.gitconfig.secret already exists. ${NC}"
+        return
+        # echo -e "${RED}~/.gitconfig.secret already exists. ${NC}"
     fi
 }
 
