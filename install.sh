@@ -28,6 +28,9 @@ safe_link(){
             echo "Skip $dst"
         fi
     else
+        if [[ -f $dst ]]; then
+            mkdir -p $(dirname $dst)
+        fi
         echo "Link $src to $dst"
         ln -s $src $dst
     fi
