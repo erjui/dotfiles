@@ -136,3 +136,6 @@ done
 # REMIND. don't need this since _exa is copied to /usr/local/share/zsh/site-functions/ by ubuntu-install script
 fpath=(~/.zfunc $fpath)
 
+# custom binaries
+export PATH=$PATH:~/.bin
+

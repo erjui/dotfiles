@@ -63,6 +63,9 @@ symlink () {
     # git symlink
     safe_link $DOTFILES/git/.gitconfig ~/.gitconfig
     safe_link $DOTFILES/git/.gitignore ~/.gitignore
+
+    # bin symlink
+    safe_link $DOTFILES/bin ~/.bin
 }
 
 set_git_secret_config () {
