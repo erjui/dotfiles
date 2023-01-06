@@ -38,13 +38,6 @@ install_basic_packages() {
     done
 }
 
-install_anaconda() {
-    # https://www.anaconda.com/products/distribution#linux
-    echo -e "Install Anaconda..."
-    wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh # REMIND: anaconda version update
-    bash Anaconda3-2021.11-Linux-x86_64.sh
-}
-
 install_git() {
     # https://launchpad.net/~git-core/+archive/ubuntu/ppa
     echo -e "Install Git..."
@@ -78,6 +71,14 @@ install_exa() {
     cp completions/exa.zsh $PREFIX/share/zsh/site-functions/_exa
     cp man/exa.1 /usr/share/man/man1/exa.1
     cp man/exa_colors.5 /usr/share/man5/exa_colors.5
+}
+
+install_anaconda() {
+    # https://www.anaconda.com/products/distribution#linux
+    echo -e "Install Anaconda..."
+    wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh # REMIND: anaconda version update
+    bash Anaconda3-2021.11-Linux-x86_64.sh
+    rm -rf Anaconda3-2021.11-Linux-x86_64.sh
 }
 
 set_python_symlink() {
