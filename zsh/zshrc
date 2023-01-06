@@ -132,3 +132,6 @@ done
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# currently for exa setting
+fpath=(~/.zfunc $fpath)
+

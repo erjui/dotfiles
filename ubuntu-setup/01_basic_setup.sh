@@ -21,10 +21,10 @@ install_basic_packages() {
     echo -e "Install Basic Packages..."
     local packages=( \
         build-essential man lspci curl less tree \
-        htop nvtop \
+        htop iotop nvtop gpustat \
         vim tmux \
         tig \
-        exa bat fd-find ripgrep fzf \
+        bat fd-find ripgrep fzf \
         direnv sshpass \
         asciinema neofetch \
         ncal xclip \
@@ -36,13 +36,6 @@ install_basic_packages() {
     for package in ${packages[@]}; do
         sudo apt install -y $package
     done
-}
-
-install_anaconda() {
-    # https://www.anaconda.com/products/distribution#linux
-    echo -e "Install Anaconda..."
-    wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh # REMIND: anaconda version update
-    bash Anaconda3-2021.11-Linux-x86_64.sh
 }
 
 install_git() {
@@ -68,6 +61,26 @@ install_fasd() {
     sudo apt-get install fasd
 }
 
+install_exa() {
+    # REMIND: need version update
+    echo -e "Install EXA..."
+    wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
+    cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
+
+    cp bin/exa /usr/local/bin
+    cp completions/exa.zsh $PREFIX/share/zsh/site-functions/_exa
+    cp man/exa.1 /usr/share/man/man1/exa.1
+    cp man/exa_colors.5 /usr/share/man5/exa_colors.5
+}
+
+install_anaconda() {
+    # https://www.anaconda.com/products/distribution#linux
+    echo -e "Install Anaconda..."
+    wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh # REMIND: anaconda version update
+    bash Anaconda3-2021.11-Linux-x86_64.sh
+    rm -rf Anaconda3-2021.11-Linux-x86_64.sh
+}
+
 set_python_symlink() {
     # python symbolic link
     echo -e "Set python symbolic link..."
@@ -80,6 +93,7 @@ install_all() {
     install_git
     install_neovim
     install_fasd
+    install_exa
     install_anaconda
     set_python_symlink
 }
