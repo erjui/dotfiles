@@ -24,7 +24,7 @@ install_basic_packages() {
         htop iotop nvtop gpustat \
         vim tmux \
         tig \
-        exa bat fd-find ripgrep fzf \
+        bat fd-find ripgrep fzf \
         direnv sshpass \
         asciinema neofetch \
         ncal xclip \
@@ -68,6 +68,18 @@ install_fasd() {
     sudo apt-get install fasd
 }
 
+install_exa() {
+    # REMIND: need version update
+    echo -e "Install EXA..."
+    wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
+    cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
+
+    cp bin/exa /usr/local/bin
+    cp completions/exa.zsh $PREFIX/share/zsh/site-functions/_exa
+    cp man/exa.1 /usr/share/man/man1/exa.1
+    cp man/exa_colors.5 /usr/share/man5/exa_colors.5
+}
+
 set_python_symlink() {
     # python symbolic link
     echo -e "Set python symbolic link..."
@@ -80,6 +92,7 @@ install_all() {
     install_git
     install_neovim
     install_fzf
+    install_exa
     install_anaconda
     set_python_symlink
 }
