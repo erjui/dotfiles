@@ -43,6 +43,7 @@ install_guake() {
 install_zsh
 install_guake
 
+# REMIND. dotfile install script should be done afterwards
 echo -e "${RED}| ${YELLOW}03_terminal_setup.sh done ${RED}| ${NC}"
 echo -e "Type any keyboard input to continue...\n"
 read

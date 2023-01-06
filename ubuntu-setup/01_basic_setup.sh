@@ -68,7 +68,7 @@ install_exa() {
     cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
 
     cp bin/exa /usr/local/bin
-    cp completions/exa.zsh $PREFIX/share/zsh/site-functions/_exa
+    cp completions/exa.zsh /usr/local/share/zsh/site-functions/_exa
     cp man/exa.1 /usr/share/man/man1/exa.1
     cp man/exa_colors.5 /usr/share/man5/exa_colors.5
 }
@@ -102,5 +102,3 @@ install_all
 
 echo -e "${RED}| ${YELLOW}01_basic_setup.sh done ${RED}| ${NC}"
 echo -e "Type any keyboard input to continue...\n"
-
-# TODO: build exa with git feature
