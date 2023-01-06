@@ -91,7 +91,7 @@ install_all() {
     install_basic_packages
     install_git
     install_neovim
-    install_fzf
+    install_fasd
     install_exa
     install_anaconda
     set_python_symlink
