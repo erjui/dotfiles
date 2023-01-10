@@ -23,7 +23,7 @@ install_basic_packages() {
         build-essential man lspci curl less tree \
         htop iotop nvtop gpustat \
         vim tmux \
-        tig \
+        tig gh \
         bat fd-find ripgrep fzf \
         direnv sshpass \
         asciinema neofetch \
