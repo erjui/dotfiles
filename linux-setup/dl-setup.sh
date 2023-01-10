@@ -3,7 +3,7 @@
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
-echo -e "${RED}| ${YELLOW}02_nvidia_driver_cuda_cudnn.sh begin ${RED}| ${NC}\n"
+echo -e "${RED}| ${YELLOW}nvidia_driver_cuda_cudnn.sh begin ${RED}| ${NC}\n"
 
 echo -e "Start NVIDIA Graphic card setting"
 echo -e "Install nvidia driver..."
@@ -29,8 +29,9 @@ sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
 sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 
-# NCCL if needed
+# TODO: NCCL if needed
+# TODO: version update
 
-echo -e "${RED}| ${YELLOW}02_nvidia_driver_cuda_cudnn.sh done ${RED}| ${NC}"
+echo -e "${RED}| ${YELLOW}nvidia_driver_cuda_cudnn.sh done ${RED}| ${NC}"
 echo -e "Type any keyboard input to continue...\n"
 read

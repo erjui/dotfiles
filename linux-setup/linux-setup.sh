@@ -150,7 +150,7 @@ install_server() {
 
 case $1
 in
-    d*|desktop)
+    de|desktop)
         echo -e "${RED}| ${YELLOW}linux-setup.sh desktop begin ${RED}| ${NC}\n"
         # install_desktop
         echo -e "${RED}| ${YELLOW}linux-setup.sh desktop done ${RED}| ${NC}"
@@ -162,12 +162,16 @@ in
         echo -e "${RED}| ${YELLOW}linux-setup.sh server done ${RED}| ${NC}"
         echo -e "Type any keyboard input to continue...\n"
         ;;
+    dl)
+        bash dl-setup.sh
+        ;;
     h*|help|*)
         echo "Usage: bash linux-setup.sh [OPTION]"
         echo "Options:"
         echo ""
         echo "  desktop    Install linux/ubuntu for Desktop"
         echo "  server     Install linux/ubuntu for Server"
+        echo "  dl         Install deep learning nvidia environment"
         echo "  help       Print this help"
         echo ""
 esac
