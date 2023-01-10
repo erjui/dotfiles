@@ -67,10 +67,12 @@ install_exa() {
     wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
     cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
 
-    cp bin/exa /usr/local/bin
-    cp completions/exa.zsh /usr/local/share/zsh/site-functions/_exa
-    cp man/exa.1 /usr/share/man/man1/exa.1
-    cp man/exa_colors.5 /usr/share/man5/exa_colors.5
+    sudo cp bin/exa /usr/local/bin
+    sudo cp completions/exa.zsh /usr/local/share/zsh/site-functions/_exa
+    sudo cp man/exa.1 /usr/share/man/man1/exa.1
+    sudo cp man/exa_colors.5 /usr/share/man/man5/exa_colors.5
+
+    cd .. && rm -rf exa
 }
 
 install_anaconda() {
