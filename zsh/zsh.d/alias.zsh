@@ -68,9 +68,11 @@ then
     alias lt='exa -T'
     alias ltl='exa -T -L'
 fi
-alias l='ls -lah'
-alias la='ls -lAh'
+alias l='ls -lah --git'
+alias la='ls -lah'
 alias ll='ls -lh'
+alias lag='ls lah --git'
+alias llg='ls -lh --git'
 
 # bat
 if command -v batcat &> /dev/null
