@@ -152,13 +152,13 @@ case $1
 in
     de|desktop)
         echo -e "${RED}| ${YELLOW}linux-setup.sh desktop begin ${RED}| ${NC}\n"
-        # install_desktop
+        install_desktop
         echo -e "${RED}| ${YELLOW}linux-setup.sh desktop done ${RED}| ${NC}"
         echo -e "Type any keyboard input to continue...\n"
         ;;
     s*|server)
         echo -e "${RED}| ${YELLOW}linux-setup.sh server begin ${RED}| ${NC}\n"
-        # install_server
+        install_server
         echo -e "${RED}| ${YELLOW}linux-setup.sh server done ${RED}| ${NC}"
         echo -e "Type any keyboard input to continue...\n"
         ;;
