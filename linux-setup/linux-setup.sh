@@ -56,8 +56,8 @@ install_neovim() {
 install_fasd() {
     echo -e "Install FASD..."
     sudo add-apt-repository ppa:aacebedo/fasd
-    sudo apt-get update
-    sudo apt-get install fasd
+    sudo apt update
+    sudo apt install -y fasd
 }
 
 install_exa() {
