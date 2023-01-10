@@ -3,7 +3,6 @@
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
-echo -e "${RED}| ${YELLOW}linux-setup.sh begin ${RED}| ${NC}\n"
 
 system_check() {
     # system check
@@ -124,7 +123,7 @@ install_guake() {
     sudo cp -P /usr/share/applications/guake.desktop /etc/xdg/autostart/
 }
 
-install_all() {
+install_desktop() {
     system_check
     install_basic_packages
     install_git
@@ -133,14 +132,45 @@ install_all() {
     install_exa
     install_anaconda
     install_zsh
-    install_guake
+    install_guake # guake only needed for Desktop
     set_python_symlink
 }
 
-install_all
+install_server() {
+    system_check
+    install_basic_packages
+    install_git
+    install_neovim
+    install_fasd
+    install_exa
+    install_anaconda
+    install_zsh
+    set_python_symlink
+}
 
-echo -e "${RED}| ${YELLOW}linux-setup.sh done ${RED}| ${NC}"
-echo -e "Type any keyboard input to continue...\n"
+case $1
+in
+    d*|desktop)
+        echo -e "${RED}| ${YELLOW}linux-setup.sh desktop begin ${RED}| ${NC}\n"
+        # install_desktop
+        echo -e "${RED}| ${YELLOW}linux-setup.sh desktop done ${RED}| ${NC}"
+        echo -e "Type any keyboard input to continue...\n"
+        ;;
+    s*|server)
+        echo -e "${RED}| ${YELLOW}linux-setup.sh server begin ${RED}| ${NC}\n"
+        # install_server
+        echo -e "${RED}| ${YELLOW}linux-setup.sh server done ${RED}| ${NC}"
+        echo -e "Type any keyboard input to continue...\n"
+        ;;
+    h*|help|*)
+        echo "Usage: bash linux-setup.sh [OPTION]"
+        echo "Options:"
+        echo ""
+        echo "  desktop    Install linux/ubuntu for Desktop"
+        echo "  server     Install linux/ubuntu for Server"
+        echo "  help       Print this help"
+        echo ""
+esac
 
 # TODO: fzf custom install
 # TODO: git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
