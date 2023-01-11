@@ -27,6 +27,7 @@ install_basic_packages() {
         direnv sshpass \
         asciinema neofetch \
         ncal xclip \
+        rsync \
     )
 
     # system update
