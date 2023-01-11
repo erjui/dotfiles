@@ -62,17 +62,29 @@ then
 fi
 
 # exa
+# TODO: Add sort by size aliases
 if command -v exa &> /dev/null
 then
     alias ls='exa -F'
+    alias la='exa -lahF'
+    alias ll='exa -lhF'
+    alias lag='exa -lahF --git'
+    alias llg='exa -lhF --git'
     alias lt='exa -T'
     alias ltl='exa -T -L'
+
+    alias l='la'
+else
+    alias la='ls -al'
+    alias ll='ls -l'
+    if command -v tree &> /dev/null
+    then
+        alias lt='tree'
+        alias ltl='tree -L'
+    fi
+
+    alias l='la'
 fi
-alias l='ls -lah --git'
-alias la='ls -lah'
-alias ll='ls -lh'
-alias lag='ls lah --git'
-alias llg='ls -lh --git'
 
 # bat
 if command -v batcat &> /dev/null
