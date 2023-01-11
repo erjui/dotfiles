@@ -79,6 +79,27 @@ set_git_secret_config () {
 
         git config --file ~/.gitconfig.secret user.name "$username"
         git config --file ~/.gitconfig.secret user.email "$useremail"
+
+        echo -e "${YELLOW}Register git credential helper ${NC}"
+        echo -e "${YELLOW}1. Do not register${NC}"
+        echo -e "${YELLOW}2. Register permanently: store${NC}"
+        echo -e "${YELLOW}3. Regieter temporarily: cache${NC}"
+        echo -ne "${YELLOW}Enter your choice: ${NC}"
+        read choice
+
+        case $choice in
+            1)
+                ;;
+            2|s|store)
+                git config --file ~/.gitconfig.secret credential.helper "store"
+                ;;
+            3|c|cache)
+                git config --file ~/.gitconfig.secret credential.helper "cache --timeout=3600"
+                ;;
+            *)
+                echo -e "${RED}Invalid choice. ${NC}"
+                ;;
+        esac
     else
         return
         # echo -e "${RED}~/.gitconfig.secret already exists. ${NC}"
