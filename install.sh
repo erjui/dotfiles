@@ -3,6 +3,7 @@
 
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
 NC='\033[0m'
 
 safe_link(){
@@ -67,11 +68,13 @@ symlink () {
 }
 
 set_git_secret_config () {
+    echo -e "${YELLOW}Set git secret config${NC}"
+
     if [ ! -f ~/.gitconfig.secret ];
     then
         touch ~/.gitconfig.secret
 
-        echo -e "${YELLOW}Set git secret config${NC}"
+        echo -e "${YELLOW}Register git user name / email${NC}"
         echo -ne "${YELLOW}Enter your name: ${NC}"
         read username
         echo -ne "${YELLOW}Enter your email: ${NC}"
@@ -82,8 +85,8 @@ set_git_secret_config () {
 
         echo -e "${YELLOW}Register git credential helper ${NC}"
         echo -e "${YELLOW}1. Do not register${NC}"
-        echo -e "${YELLOW}2. Register permanently: store${NC}"
-        echo -e "${YELLOW}3. Regieter temporarily: cache${NC}"
+        echo -e "${YELLOW}2. Register permanently (store)${NC}"
+        echo -e "${YELLOW}3. Regieter temporarily (cache)${NC}"
         echo -ne "${YELLOW}Enter your choice: ${NC}"
         read choice
 
@@ -100,9 +103,15 @@ set_git_secret_config () {
                 echo -e "${RED}Invalid choice. ${NC}"
                 ;;
         esac
+
+        # print current .gitconfig.secret config
+        echo -e "${GREEN}Current git secret config${NC}"
+        echo -ne "${GREEN}user.name: ${NC}"; git config --file ~/.gitconfig.secret user.name
+        echo -ne "${GREEN}user.email: ${NC}"; git config --file ~/.gitconfig.secret user.email
+        echo -ne "${GREEN}credential.helper: ${NC}"; git config --file ~/.gitconfig.secret credential.helper
     else
         return
-        # echo -e "${RED}~/.gitconfig.secret already exists. ${NC}"
+        echo -e "${RED}~/.gitconfig.secret already exists. ${NC}"
     fi
 }
 
