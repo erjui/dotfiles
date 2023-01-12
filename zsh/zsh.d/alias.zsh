@@ -73,7 +73,13 @@ then
     alias lt='exa -T'
     alias ltl='exa -T -L'
 
-    alias l='la'
+    alias lsrt='exa -lahF --sort'
+    alias lsrtt='exa -lahF --sort=modified' # modified time by default: (modifed|accessed|changed)
+    alias lsrts='exa -lahF --sort=size'
+    alias lsrte='exa -lahF --sort=extension'
+    alias lsrtn'exa -lahF --sort=name'
+
+    alias l='exa -lahF'
 else
     alias la='ls -al'
     alias ll='ls -l'
@@ -83,7 +89,12 @@ else
         alias ltl='tree -L'
     fi
 
-    alias l='la'
+    alias lsrt='ls -al --sort'
+    alias lsrtt='ls -al --sort=time'
+    alias lsrts='ls -al --sort=size'
+    alias lsrte='ls -al --sort=extension'
+
+    alias l='ls -al'
 fi
 
 # bat
