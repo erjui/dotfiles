@@ -28,6 +28,7 @@ install_basic_packages() {
         asciinema neofetch \
         ncal xclip \
         rsync \
+        tldr sd \
     )
 
     # system update
