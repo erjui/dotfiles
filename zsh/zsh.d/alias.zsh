@@ -52,6 +52,15 @@ alias rm='nocorrect rm -iv'
 alias md='mkdir -p'
 alias rd='rmdir'
 
+# TODO: Add du-dust, alternative for du
+alias duu='du -csh * 2>/dev/null | sort -hr'
+if command -v duf &> /dev/null
+then
+    alias df='duf --sort size'
+else
+    alias df='df -hT'
+fi
+
 # TODO: python virtual environment
 # anaconda
 alias ca='conda activate'

@@ -23,7 +23,7 @@ install_basic_packages() {
         htop iotop nvtop gpustat \
         vim tmux \
         tig gh \
-        bat fd-find ripgrep fzf \
+        bat fd-find ripgrep fzf duf \
         direnv sshpass \
         asciinema neofetch \
         ncal xclip \
