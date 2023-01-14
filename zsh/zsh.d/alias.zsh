@@ -24,17 +24,33 @@ then
     alias copy='xclip -selection clipboard'
     alias copy!='xclip -o'
     alias pwdc='pwd | copy'
+    if command -v fasd &> /dev/null
+    then
+        function dirc() {d $1 | copy}
+    fi
 fi
 
 # directory management
 if command -v xdg-open &> /dev/null
 then
     alias opwd='xdg-open .'
-    funciton dirc() {
-        ( z $1 && pwdc || echo "Failed to find the path: ${1}" ) # TODO: check fasd exist for 'z'
-    }
 fi
 alias rsyncgit='rsync -vhra --include='\''**.gitignore'\'' --exclude='\''/.git'\'' --filter='\'':- .gitignore'\'' --delete-after'
+
+# fasd
+if command -v fasd &> /dev/null
+then
+    alias a='fasd -a'
+    alias s='fasd -si'
+    alias d='fasd -d'
+    alias f='fasd -f'
+    alias sd='fasd -sid'
+    alias sf='fasd -sif'
+    alias z='fasd_cd -d'
+    alias zz='fasd_cd -d -i'
+    alias v='f -e vim'
+    alias o='a -e xdg-open'
+fi
 
 # vim: use neovim as default
 if command -v nvim &> /dev/null
@@ -142,21 +158,6 @@ then
 elif command -v nvidia-smi &> /dev/null
 then
     alais gs='watch -n 0.1 -d nvidia-smi'
-fi
-
-# fasd
-if command -v fasd &> /dev/null
-then
-    alias a='fasd -a'
-    alias s='fasd -si'
-    alias d='fasd -d'
-    alias f='fasd -f'
-    alias sd='fasd -sid'
-    alias sf='fasd -sif'
-    alias z='fasd_cd -d'
-    alias zz='fasd_cd -d -i'
-    alias v='f -e vim'
-    alias o='a -e xdg-open'
 fi
 
 # git
