@@ -29,7 +29,7 @@ fi
 # directory management
 if command -v xdg-open &> /dev/null
 then
-    alias open='xdg-open .'
+    alias opwd='xdg-open .'
     funciton dirc() {
         ( z $1 && pwdc || echo "Failed to find the path: ${1}" ) # TODO: check fasd exist for 'z'
     }
