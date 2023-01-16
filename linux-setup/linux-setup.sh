@@ -119,6 +119,12 @@ install_zsh() {
     sudo chsh -s $(which zsh)
 }
 
+install_cargo() {
+    # install rust package manager
+    curl https://sh.rustup.rs -sSf | sh
+    source "$HOME/.cargo/env"
+}
+
 install_guake() {
     # install guake
     sudo apt install -y guake
@@ -134,6 +140,7 @@ install_desktop() {
     install_exa
     install_anaconda
     install_zsh
+    install_cargo
     install_guake # guake only needed for Desktop
     set_python_symlink
 }
@@ -147,6 +154,7 @@ install_server() {
     install_exa
     install_anaconda
     install_zsh
+    install_cargo
     set_python_symlink
 }
 
