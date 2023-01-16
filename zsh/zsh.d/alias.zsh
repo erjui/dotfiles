@@ -1,9 +1,11 @@
 # Custom aliases for ZSH
 
+BBLACK='\033[1;30m'
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m'
+ONWHITE='\033[47m'
 
 alias reload!='source ~/.zshrc'
 alias c='clear'
@@ -13,6 +15,7 @@ then
         echo -e "${GREEN}The systme will be off after 3 seconds${NC}" && sleep 1
         echo -e "${YELLOW}The systme will be off after 2 seconds${NC}" && sleep 1
         echo -e "${RED}The systme will be off after 1 seconds${NC}" && sleep 1
+        echo -e "${ONWHITE}${BBLACK}The systme will be off after 0 seconds${NC}" && sleep 0.5
         /usr/sbin/poweroff
     }
     alias spoweroff='sudo poweroff'
