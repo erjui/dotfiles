@@ -15,7 +15,7 @@ then
         echo -e "${GREEN}The systme will be off after 3 seconds${NC}" && sleep 1
         echo -e "${YELLOW}The systme will be off after 2 seconds${NC}" && sleep 1
         echo -e "${RED}The systme will be off after 1 seconds${NC}" && sleep 1
-        echo -e "${ONWHITE}${BBLACK}The systme will be off after 0 seconds${NC}" && sleep 0.5
+        echo -e "${ONWHITE}${BBLACK}BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP${NC}" && sleep 0.2
         /usr/sbin/poweroff
     }
     alias spoweroff='sudo poweroff'
