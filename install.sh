@@ -14,7 +14,13 @@ safe_link(){
         read -p "$dst already exists. Override? [y/n] " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            rm $dst
+            read -p "Backup $dst to $dst.bak? [y/n] " -n 1 -r
+            echo
+            if [[ $REPLY =~ ^[Yy]$ ]]; then
+                mv $dst $dst.bak
+            else
+                rm -rf $dst
+            fi
             ln -s $src $dst
         else
             echo "Skip $dst"
