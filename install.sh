@@ -18,8 +18,10 @@ safe_link(){
             echo
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 mv $dst $dst.bak
+                echo "Backup $dst to $dst.bak"
             else
                 rm -rf $dst
+                echo "Override $dst"
             fi
             ln -s $src $dst
         else
@@ -109,15 +111,17 @@ set_git_secret_config () {
                 echo -e "${RED}Invalid choice. ${NC}"
                 ;;
         esac
+        echo
 
         # print current .gitconfig.secret config
         echo -e "${GREEN}Current git secret config${NC}"
         echo -ne "${GREEN}user.name: ${NC}"; git config --file ~/.gitconfig.secret user.name
         echo -ne "${GREEN}user.email: ${NC}"; git config --file ~/.gitconfig.secret user.email
         echo -ne "${GREEN}credential.helper: ${NC}"; git config --file ~/.gitconfig.secret credential.helper
+        echo
     else
-        return
         echo -e "${RED}~/.gitconfig.secret already exists. ${NC}"
+        echo
     fi
 }
 
