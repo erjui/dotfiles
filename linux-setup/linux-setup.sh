@@ -136,6 +136,11 @@ install_cargo() {
     source "$HOME/.cargo/env"
 }
 
+install_sd() {
+    # install sd (sed alternative)
+    cargo install sd
+}
+
 install_guake() {
     # install guake
     sudo apt install -y guake
@@ -152,6 +157,7 @@ install_desktop() {
     install_anaconda
     install_zsh
     install_cargo
+    install_sd
     install_guake # guake only needed for Desktop
     install_desktop_packages # desktop packages
     set_python_symlink
@@ -167,6 +173,7 @@ install_server() {
     install_anaconda
     install_zsh
     install_cargo
+    install_sd
     set_python_symlink
 }
 
