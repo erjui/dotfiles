@@ -26,14 +26,25 @@ install_basic_packages() {
         bat fd-find ripgrep fzf duf \
         direnv sshpass \
         asciinema neofetch \
-        ncal xclip \
+        ncal \
         rsync \
-        tldr sd \
+        tldr \
     )
 
     # system update
     sudo apt update
     sudo apt upgrade
+    for package in ${packages[@]}; do
+        sudo apt install -y $package
+    done
+}
+
+install_desktop_packages() {
+    echo -e "Install Desktop Packages..."
+    local packages=( \
+        peek xclip
+    )
+
     for package in ${packages[@]}; do
         sudo apt install -y $package
     done
@@ -142,6 +153,7 @@ install_desktop() {
     install_zsh
     install_cargo
     install_guake # guake only needed for Desktop
+    install_desktop_packages # desktop packages
     set_python_symlink
 }
 
