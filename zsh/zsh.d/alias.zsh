@@ -11,14 +11,14 @@ alias reload!='source ~/.zshrc'
 alias c='clear'
 if command -v poweroff &> /dev/null
 then
-    poweroff() {
+    # safe poweroff
+    spoweroff() {
         echo -e "${GREEN}The systme will be off after 3 seconds${NC}" && sleep 1
         echo -e "${YELLOW}The systme will be off after 2 seconds${NC}" && sleep 1
         echo -e "${RED}The systme will be off after 1 seconds${NC}" && sleep 1
         echo -e "${ONWHITE}${BBLACK}BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP${NC}" && sleep 0.2
-        /usr/sbin/poweroff
+        poweroff
     }
-    alias spoweroff='sudo poweroff'
 fi
 
 # copy and paste
