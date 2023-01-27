@@ -346,4 +346,12 @@ then
     alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
     alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
 
+    # REMIND: temporiary aliases for testing usability of new git commands
+    # safe version of git rebase & checkout
+    function grbsf() {
+        git stash push && git rebase $1 $2 && git stash pop
+    }
+    function gcosf() {
+        git stash push && git checkout $1 && git stash pop
+    }
 fi
