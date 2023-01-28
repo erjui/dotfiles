@@ -12,7 +12,7 @@ alias c='clear'
 if command -v poweroff &> /dev/null
 then
     # safe poweroff
-    spoweroff() {
+    function spoweroff() {
         echo -e "${GREEN}The systme will be off after 3 seconds${NC}" && sleep 1
         echo -e "${YELLOW}The systme will be off after 2 seconds${NC}" && sleep 1
         echo -e "${RED}The systme will be off after 1 seconds${NC}" && sleep 1
