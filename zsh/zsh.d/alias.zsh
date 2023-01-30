@@ -155,6 +155,14 @@ then
     alias ta='tmux attach-session -t'
     alias tk='tmux kill-session -t'
     alias tka='tmux kill-server'
+
+    # REMIND: temporiary aliases for tmux preset readily available
+    function tnpreset() {
+        tmux new -s $1 \; \
+        split-window -v -p 30 \; \
+        send-keys 'gpustat -pi' C-m \; \
+        select-pane -t 0 \
+    }
 fi
 
 # gpustat
