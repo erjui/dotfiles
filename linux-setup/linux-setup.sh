@@ -150,8 +150,8 @@ install_guake() {
 install_node() {
     # install node
     # @https://github.com/nodesource/distributions#debinstall
-    curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
-    apt-get install -y nodejs
+    sudo curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
+    sudo apt-get install -y nodejs
 }
 
 install_desktop() {
