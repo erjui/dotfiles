@@ -147,6 +147,13 @@ install_guake() {
     sudo cp -P /usr/share/applications/guake.desktop /etc/xdg/autostart/
 }
 
+install_node() {
+    # install node
+    # @https://github.com/nodesource/distributions#debinstall
+    curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
+    apt-get install -y nodejs
+}
+
 install_desktop() {
     system_check
     install_basic_packages
@@ -160,6 +167,7 @@ install_desktop() {
     install_sd
     install_guake # guake only needed for Desktop
     install_desktop_packages # desktop packages
+    install_node
     set_python_symlink
 }
 
@@ -174,6 +182,7 @@ install_server() {
     install_zsh
     install_cargo
     install_sd
+    install_node
     set_python_symlink
 }
 
