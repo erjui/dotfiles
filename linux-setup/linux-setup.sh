@@ -153,6 +153,10 @@ install_node() {
     sudo curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
     sudo apt-get install -y nodejs
     sudo apt-get install -y npm
+
+    # install node web packages
+    sudo npm install -g http-server
+    sudo npm install -g create-react-app
 }
 
 install_desktop() {
