@@ -152,6 +152,7 @@ install_node() {
     # @https://github.com/nodesource/distributions#debinstall
     sudo curl -fsSL https://deb.nodesource.com/setup_19.x | bash -
     sudo apt-get install -y nodejs
+    sudo apt-get install -y npm
 }
 
 install_desktop() {
