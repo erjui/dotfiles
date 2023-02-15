@@ -78,6 +78,7 @@ alias rd='rmdir'
 # TODO: Add du-dust, alternative for du
 alias ducsh='du -csh * 2>/dev/null | sort -hr'
 alias ducsh.='du -csh .* 2>/dev/null | sort -hr'
+alias ducsha='du -csh * .* 2>/dev/null | sort -hr'
 if command -v duf &> /dev/null
 then
     alias df='duf --sort size'
