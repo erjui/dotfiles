@@ -18,10 +18,10 @@ safe_link(){
             echo
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 mv $dst $dst.bak
-                echo "Backup $dst to $dst.bak"
+                # echo "Backup $dst to $dst.bak"
             else
                 rm -rf $dst
-                echo "Override $dst"
+                # echo "Override $dst"
             fi
             ln -s $src $dst
         else
