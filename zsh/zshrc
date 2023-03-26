@@ -28,3 +28,16 @@ done
 
 # custom binaries
 export PATH=$PATH:~/.bin
+
+# zplugs
+source ~/.zplug/init.zsh
+zplug "zsh-users/zsh-sylsntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check; then
+   zplug install
+fi
+
+# Load everything
+zplug load
