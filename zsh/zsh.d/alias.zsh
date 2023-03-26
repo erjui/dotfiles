@@ -180,6 +180,19 @@ fi
 # git
 if command -v git &> /dev/null
 then
+    function git_current_branch() {
+        git branch --show-current
+    }
+
+    function git_main_branch() {
+        def=`git remote show origin | sed -n '/HEAD branch/s/.*: //p'`
+        echo $def
+    }
+
+    function git_develop_branch() {
+        echo "develop"
+    }
+
     alias g=git
     alias ga='git add'
     alias gaa='git add --all'
