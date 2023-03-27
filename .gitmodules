@@ -4,3 +4,6 @@
 [submodule "zsh.backup/fzf"]
 	path = zsh.backup/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "zsh/fasd"]
+	path = zsh/fasd
+	url = https://github.com/clvv/fasd.git

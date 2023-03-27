@@ -41,3 +41,6 @@ fi
 
 # Load everything
 zplug load
+
+# fasd
+eval "$(fasd --init auto)"
