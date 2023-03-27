@@ -18,10 +18,10 @@ safe_link(){
             echo
             if [[ $REPLY =~ ^[Yy]$ ]]; then
                 mv $dst $dst.bak
-                echo "Backup $dst to $dst.bak"
+                # echo "Backup $dst to $dst.bak"
             else
                 rm -rf $dst
-                echo "Override $dst"
+                # echo "Override $dst"
             fi
             ln -s $src $dst
         else
@@ -55,8 +55,8 @@ symlink () {
     safe_link $DOTFILES/zsh/p10k.zsh ~/.p10k.zsh
     safe_link $DOTFILES/zsh ~/.zsh
 
-    safe_link $DOTFILES/zsh/fzf ~/.fzf
-    safe_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
+    # safe_link $DOTFILES/zsh/fzf ~/.fzf
+    # safe_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
 
     # vim, neovim symlink
     safe_link $DOTFILES/vim/vimrc ~/.vimrc
