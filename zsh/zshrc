@@ -22,10 +22,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-for f in ~/.zsh/zsh.d/*.zsh; do
-    source $f
-done
-
 # custom binaries
 export PATH=$PATH:~/.bin
 
@@ -44,3 +40,7 @@ zplug load
 
 # fasd
 eval "$(fasd --init auto)"
+
+for f in ~/.zsh/zsh.d/*.zsh; do
+    source $f
+done

@@ -55,6 +55,7 @@ then
 #     alias zz='fasd_cd -d -i'
 #     alias v='f -e vim'
 #     alias o='a -e xdg-open'
+
     unalias sd
     unalias sf
 fi
