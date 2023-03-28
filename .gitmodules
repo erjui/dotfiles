@@ -7,3 +7,6 @@
 [submodule "zsh/fasd"]
 	path = zsh/fasd
 	url = https://github.com/clvv/fasd.git
+[submodule "zsh/zplug"]
+	path = zsh/zplug
+	url = https://github.com/zplug/zplug.git
