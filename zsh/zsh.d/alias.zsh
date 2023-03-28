@@ -1,5 +1,10 @@
 # Custom aliases for ZSH
 
+os='linux'
+if [[ `uname` == "Darwin" ]]; then
+    os='mac'
+fi
+
 BBLACK='\033[1;30m'
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
@@ -138,9 +143,17 @@ else
 fi
 
 # bat
-if command -v batcat &> /dev/null
+if [[ $os == 'mac' ]] ;
 then
-    alias cat='batcat'
+    if command -v bat &> /dev/null
+    then
+        alias cat='bat'
+    fi
+else
+    if command -v batcat &> /dev/null
+    then
+        alias cat='batcat'
+    fi
 fi
 
 # fd
