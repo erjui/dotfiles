@@ -24,7 +24,7 @@ install_packages() {
         htop \
         vim tmux \
         tig gh \
-        bat fd-find ripgrep fzf duf \
+        bat ripgrep fzf duf exa \
         direnv \
         asciinema neofetch \
         ncal \
@@ -67,9 +67,9 @@ in
         echo "Usage: bash mac-setup.sh [OPTION]"
         echo "Options:"
         echo ""
-        echo "  desktop    Install linux/ubuntu for Desktop"
+        echo "  desktop    Install mac for Desktop"
         echo "  help       Print this help"
         echo ""
 esac
 
-# todo. exa, neovim, fasd, exa, anaconda, node
+# todo. exa, neovim, fasd, anaconda, node, fd-find custom install
