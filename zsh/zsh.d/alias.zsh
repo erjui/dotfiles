@@ -72,7 +72,9 @@ then
 fi
 alias vi='vim'
 
+alias python='python3'
 alias py='python'
+alias pip='pip3'
 
 alias cp='nocorrect cp -iv'
 alias mv='nocorrect mv -iv'

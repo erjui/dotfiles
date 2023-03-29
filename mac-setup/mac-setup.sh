@@ -41,12 +41,6 @@ install_packages() {
     done
 }
 
-set_python_symlink() {
-    # python symbolic link
-    echo -e "Set python symbolic link..."
-    sudo ln -s /usr/bin/python3 /usr/bin/python
-}
-
 install_desktop() {
     system_check
     install_homebrew
