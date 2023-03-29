@@ -32,8 +32,9 @@ install_basic_packages() {
     )
 
     # system update
-    sudo apt update
-    sudo apt upgrade
+    apt update
+    apt upgrade
+    apt install sudo # remind. sudo command may not exist
     for package in ${packages[@]}; do
         sudo apt install -y $package
     done
