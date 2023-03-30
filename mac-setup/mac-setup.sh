@@ -41,6 +41,21 @@ install_packages() {
     done
 }
 
+install_anaconda() {
+    # https://repo.anaconda.com/archive/
+    echo -e "Install Anaconda..."
+
+    # For intel MAC
+    # wget https://repo.anaconda.com/archive/Anaconda3-2023.03-MacOSX-x86_64.sh
+    # bash Anaconda3-2023.03-MacOSX-x86_64.sh
+    # rm -rf Anaconda3-2023.03-MacOSX-x86_64.sh
+
+    # For M1 MAC
+    wget https://repo.anaconda.com/archive/Anaconda3-2023.03-MacOSX-arm64.sh
+    bash Anaconda3-2023.03-MacOSX-arm64.sh
+    rm -rf Anaconda3-2023.03-MacOSX-arm64.sh
+}
+
 install_desktop() {
     system_check
     install_homebrew
