@@ -57,8 +57,8 @@ symlink () {
     safe_link $DOTFILES/zsh/zplug ~/.zplug
     safe_link $DOTFILES/zsh ~/.zsh
 
-    # safe_link $DOTFILES/zsh/fzf ~/.fzf
-    # safe_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
+    safe_link $DOTFILES/zsh/fzf ~/.fzf
+    safe_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
 
     # vim, neovim symlink
     safe_link $DOTFILES/vim/vimrc ~/.vimrc
