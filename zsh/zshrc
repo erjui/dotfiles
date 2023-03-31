@@ -48,6 +48,9 @@ done
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# custom binaries
+export PATH=$PATH:~/.bin
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/seongjae/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
