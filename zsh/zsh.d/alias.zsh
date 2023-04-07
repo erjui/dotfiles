@@ -61,8 +61,8 @@ then
 #     alias v='f -e vim'
 #     alias o='a -e xdg-open'
 
-    unalias sd
-    unalias sf
+    unalias sd 2>/dev/null
+    unalias sf 2>/dev/null
 fi
 
 # vim: use neovim as default
