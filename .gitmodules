@@ -16,3 +16,6 @@
 [submodule "zsh/fzf-git.sh"]
 	path = zsh/fzf-git.sh
 	url = https://github.com/junegunn/fzf-git.sh.git
+[submodule "nano/nanorc.d"]
+	path = nano/nanorc.d
+	url = https://github.com/scopatz/nanorc.git

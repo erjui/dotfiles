@@ -11,3 +11,5 @@ set functioncolor bold,cyan
 set numbercolor yellow
 set mouse
 set indicator
+
+include ~/.nano/nanorc.d/*.nanorc
