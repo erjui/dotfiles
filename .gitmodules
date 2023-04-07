@@ -19,3 +19,4 @@
 [submodule "nano/nanorc.d"]
 	path = nano/nanorc.d
 	url = https://github.com/scopatz/nanorc.git
+    ignore = dirty
