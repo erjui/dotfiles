@@ -34,6 +34,7 @@ install_packages() {
         node \
         iterm2 \
         visual-studio-code \
+        nano \
     )
     # Install Homebrew packages
     for package in ${packages[@]}; do

@@ -65,6 +65,10 @@ symlink () {
     safe_link $DOTFILES/vim ~/.vim
     safe_link $DOTFILES/nvim ~/.config/nvim
 
+    # nano symlink
+    safe_link $DOTFILES/nano ~/.nano
+    safe_link $DOTFILES/nano/nanorc ~/.nanorc
+
     # tmux symlink
     safe_link $DOTFILES/tmux/tmux.conf ~/.tmux.conf
     safe_link $DOTFILES/tmux ~/.tmux

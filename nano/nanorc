@@ -1,0 +1,13 @@
+set tabsize 4
+set tabstospaces
+set autoindent
+set trimblanks
+set linenumbers
+set constantshow
+set titlecolor white,green
+set keycolor bold,black,white
+set statuscolor bold,black,white
+set functioncolor bold,cyan
+set numbercolor yellow
+set mouse
+set indicator
