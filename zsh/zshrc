@@ -42,6 +42,7 @@ zplug load
 # fasd
 eval "$(fasd --init auto)"
 
+# source .zsh files
 for f in ~/.zsh/zsh.d/*.zsh; do
     source $f
 done
