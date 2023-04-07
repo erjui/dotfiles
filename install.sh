@@ -60,6 +60,9 @@ symlink () {
     safe_link $DOTFILES/zsh/fzf ~/.fzf
     safe_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
 
+    # bash symlink
+    safe_link $DOTFILES/bash/bashrc ~/.bashrc
+
     # vim, neovim symlink
     safe_link $DOTFILES/vim/vimrc ~/.vimrc
     safe_link $DOTFILES/vim ~/.vim
