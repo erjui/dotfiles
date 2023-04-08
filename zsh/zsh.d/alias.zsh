@@ -1,4 +1,7 @@
 # Custom aliases for ZSH
+# @https://zsh.sourceforge.io/Doc/Release/Options.html
+
+unsetopt NOMATCH
 
 os='linux'
 if [[ `uname` == "Darwin" ]]; then
