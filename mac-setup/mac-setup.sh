@@ -35,6 +35,7 @@ install_packages() {
         iterm2 \
         visual-studio-code \
         nano \
+        fasd \
     )
     # Install Homebrew packages
     for package in ${packages[@]}; do
