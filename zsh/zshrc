@@ -49,7 +49,7 @@ done
 
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.zsh/fzf-git/fzf-git.sh ] && source ~/.zsh/git/git.zsh
+[ -f ~/.zsh/fzf-git/fzf-git.sh ] && source ~/.zsh/fzf-git/fzf-git.sh
 
 # custom binaries
 export PATH=$PATH:~/.bin
