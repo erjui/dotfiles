@@ -149,7 +149,7 @@ if [[ $os == 'mac' ]] ;
 then
     if command -v bat &> /dev/null
     then
-        alias cat='bat'
+        alias cat='bat --theme "Monokai Extended"'
     fi
 else
     if command -v batcat &> /dev/null
