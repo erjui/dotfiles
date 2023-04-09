@@ -54,6 +54,7 @@ symlink () {
     safe_link $DOTFILES/zsh/zshenv ~/.zshenv
     safe_link $DOTFILES/zsh/zshrc ~/.zshrc
     safe_link $DOTFILES/zsh/p10k.zsh ~/.p10k.zsh
+    safe_link $DOTFILES/zsh/zpreztorc ~/.zpreztorc
     safe_link $DOTFILES/zsh/zplug ~/.zplug
     safe_link $DOTFILES/zsh ~/.zsh
 
