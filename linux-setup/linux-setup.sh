@@ -233,7 +233,3 @@ in
         echo "  help       Print this help"
         echo ""
 esac
-
-# TODO: fzf custom install
-# TODO: git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# TODO: ~/.fzf/install
