@@ -103,9 +103,9 @@ install_exa() {
 install_anaconda() {
     # https://www.anaconda.com/products/distribution#linux
     echo -e "Install Anaconda..."
-    wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh # REMIND: anaconda version update
+    [ ! -f Anaconda3-2021.11-Linux-x86_64.sh ] && wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh # REMIND: anaconda version update
     bash Anaconda3-2021.11-Linux-x86_64.sh
-    rm -rf Anaconda3-2021.11-Linux-x86_64.sh
+    # rm -rf Anaconda3-2021.11-Linux-x86_64.sh
 }
 
 set_python_symlink() {
@@ -200,8 +200,8 @@ install_server() {
     install_exa
     install_anaconda
     install_zsh
-    install_cargo
-    install_sd
+    # install_cargo
+    # install_sd
     install_node
     set_python_symlink
 }
