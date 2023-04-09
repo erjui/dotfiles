@@ -51,6 +51,18 @@ install_desktop_packages() {
     done
 }
 
+install_script_packages() {
+    # packages for custom script
+    echo -e "Install Script Packages..."
+    local packages=( \
+        cpufrequtils xclip lmsensor hwinfo sshpass \
+    )
+
+    for package in ${packages[@]}; do
+        sudo apt install -y $package
+    done
+}
+
 install_git() {
     # https://launchpad.net/~git-core/+archive/ubuntu/ppa
     echo -e "Install Git..."
@@ -163,6 +175,7 @@ install_node() {
 install_desktop() {
     system_check
     install_basic_packages
+    install_script_packages
     install_git
     install_neovim
     install_fasd
@@ -180,6 +193,7 @@ install_desktop() {
 install_server() {
     system_check
     install_basic_packages
+    install_script_packages
     install_git
     install_neovim
     install_fasd
