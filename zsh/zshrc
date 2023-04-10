@@ -27,7 +27,7 @@ export PATH=$PATH:~/.bin
 
 # zplugs
 source ~/.zplug/init.zsh
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 
