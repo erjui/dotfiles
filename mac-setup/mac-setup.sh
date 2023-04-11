@@ -22,7 +22,7 @@ install_packages() {
     local packages=( \
         curl less tree \
         htop \
-        vim tmux \
+        vim neovim tmux \
         tig gh \
         bat ripgrep fzf duf exa \
         direnv \
