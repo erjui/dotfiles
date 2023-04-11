@@ -49,3 +49,12 @@ source ~/.vim/plugins.vim
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    " for MACOS where option right/left-arrows are remapped to ESC f/b
+    " this allows user to use option right-arrow to move forward by word
+    :map f w
+  endif
+endif
