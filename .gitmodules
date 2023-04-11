@@ -17,3 +17,6 @@
 	path = nano/nanorc.d
 	url = https://github.com/scopatz/nanorc.git
     ignore = dirty
+[submodule "anaconda/conda-zsh-completion"]
+	path = zsh/conda/conda-zsh-completion
+	url = https://github.com/esc/conda-zsh-completion

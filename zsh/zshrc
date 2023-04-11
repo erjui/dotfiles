@@ -67,5 +67,9 @@ else
     fi
 fi
 unset __conda_setup
+
+# esc/conda-zsh-completion
+fpath+=~/.zsh/conda/conda-zsh-completion
+compinit conda
 # <<< conda initialize <<<
 
