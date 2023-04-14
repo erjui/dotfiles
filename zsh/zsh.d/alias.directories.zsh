@@ -31,6 +31,8 @@ alias rd='rmdir'
 # directory management
 alias opwd='open .'
 alias ohome='open ~'
+alias -s {md,markdown,txt,py,c,cpp,sh,bash,zsh,vim}=cat
+alias -s {jpg,jpeg,png,gif}=open
 
 # rsync without files specified in .gitignore
 alias rsyncgit="rsync -ahrvz --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after"
