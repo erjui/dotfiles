@@ -3,9 +3,12 @@
 
 unsetopt NOMATCH
 
-os='linux'
-if [[ `uname` == "Darwin" ]]; then
+os='undefined'
+if [[ "$OSTYPE" == darwin* ]]; then
     os='mac'
+elif [[ "$OSTYPE" == linux* ]]; then
+    os='linux'
+    alias open='xdg-open'
 fi
 
 BBLACK='\033[1;30m'

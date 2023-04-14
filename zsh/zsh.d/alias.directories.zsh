@@ -1,6 +1,14 @@
 # Custom alises regarding to directories for ZSH
 # @https://zsh.sourceforge.io/Doc/Release/Shell-Grammar.html#Aliasing
 
+os='undefined'
+if [[ "$OSTYPE" == darwin* ]]; then
+    os='mac'
+elif [[ "$OSTYPE" == linux* ]]; then
+    os='linux'
+    alias open='xdg-open'
+fi
+
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
@@ -21,10 +29,8 @@ alias md='mkdir -p'
 alias rd='rmdir'
 
 # directory management
-if command -v xdg-open &> /dev/null
-then
-    alias opwd='xdg-open .'
-fi
+alias opwd='open .'
+alias ohome='open ~'
 
 # rsync without files specified in .gitignore
 alias rsyncgit="rsync -ahrvz --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after"
