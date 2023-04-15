@@ -5,5 +5,6 @@ Plug 'preservim/nerdtree' |
     \ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
