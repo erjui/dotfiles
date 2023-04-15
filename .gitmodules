@@ -20,3 +20,6 @@
 [submodule "anaconda/conda-zsh-completion"]
 	path = zsh/conda/conda-zsh-completion
 	url = https://github.com/esc/conda-zsh-completion
+[submodule "zsh/prezto"]
+	path = zsh/prezto
+	url = https://github.com/sorin-ionescu/prezto.git
