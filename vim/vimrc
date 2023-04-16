@@ -33,7 +33,7 @@ set undolevels=1000
 
 " theme
 set background=dark
-colorscheme desert
+" colorscheme desert
 
 " key mapping
 let mapleader=','
