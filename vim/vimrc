@@ -43,8 +43,10 @@ nnoremap <leader>: :
 
 nnoremap <silent> <leader>h :nohlsearch<CR>
 
+call plug#begin('~/.vim/plugged')
 source ~/.vim/plugins.vim
 source ~/.vim/plugins.local.vim
+call plug#end()
 
 " NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
