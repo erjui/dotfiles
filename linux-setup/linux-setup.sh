@@ -176,12 +176,12 @@ install_desktop() {
     system_check
     install_basic_packages
     install_script_packages
+    install_zsh
     install_git
     install_neovim
     install_fasd
     install_exa
     install_anaconda
-    install_zsh
     install_cargo
     install_sd
     install_guake # guake only needed for Desktop
@@ -194,12 +194,12 @@ install_server() {
     system_check
     install_basic_packages
     install_script_packages
+    install_zsh
     install_git
     install_neovim
     install_fasd
     install_exa
     install_anaconda
-    install_zsh
     # install_cargo
     # install_sd
     install_node
