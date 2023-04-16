@@ -31,14 +31,6 @@ zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-   zplug install
-fi
-
-# Load everything
-zplug load
-
 # fasd
 eval "$(fasd --init auto)"
 
@@ -46,6 +38,14 @@ eval "$(fasd --init auto)"
 for f in ~/.zsh/zsh.d/*.zsh; do
     source $f
 done
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check; then
+   zplug install
+fi
+
+# Load everything
+zplug load
 
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
