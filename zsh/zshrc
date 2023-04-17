@@ -29,7 +29,7 @@ export PATH=$PATH:~/.bin
 source ~/.zplug/init.zsh
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
+zplug "djui/alias-tips"
 
 # fasd
 eval "$(fasd --init auto)"
