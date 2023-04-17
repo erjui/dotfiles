@@ -194,6 +194,14 @@ then
     alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
     alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
 
+    function gapan() {
+        if [[ -z "$1" ]]; then
+            git add --intent-to-add . && git add --patch
+        else
+            git add --intent-to-add "$@" && git add --patch "$@"
+        fi
+    }
+
     # REMIND: temporiary aliases for testing usability of new git commands
     # safe version of git rebase & checkout
     function grbsf() {
