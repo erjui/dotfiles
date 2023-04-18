@@ -73,3 +73,9 @@ fpath+=~/.zsh/conda/conda-zsh-completion
 compinit conda
 # <<< conda initialize <<<
 
+# iterm2 shell integration
+# @https://iterm2.com/documentation-shell-integration.html
+if [[ "$OSTYPE" == darwin* ]]; then
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+fi
+
