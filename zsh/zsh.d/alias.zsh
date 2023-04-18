@@ -20,16 +20,20 @@ ONWHITE='\033[47m'
 
 alias reload!='source ~/.zshrc'
 alias c='clear'
-if command -v poweroff &> /dev/null
+
+if [[ $os == 'linux' ]] ;
 then
-    # safe poweroff
-    function spoweroff() {
-        echo -e "${GREEN}The systme will be off after 3 seconds${NC}" && sleep 1
-        echo -e "${YELLOW}The systme will be off after 2 seconds${NC}" && sleep 1
-        echo -e "${RED}The systme will be off after 1 seconds${NC}" && sleep 1
-        echo -e "${ONWHITE}${BBLACK}BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP${NC}" && sleep 0.2
-        poweroff
-    }
+    if command -v poweroff &> /dev/null
+    then
+        # safe poweroff
+        function spoweroff() {
+            echo -e "${GREEN}The systme will be off after 3 seconds${NC}" && sleep 1
+            echo -e "${YELLOW}The systme will be off after 2 seconds${NC}" && sleep 1
+            echo -e "${RED}The systme will be off after 1 seconds${NC}" && sleep 1
+            echo -e "${ONWHITE}${BBLACK}BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP${NC}" && sleep 0.2
+            poweroff
+        }
+    fi
 fi
 
 # copy and paste
