@@ -84,42 +84,6 @@ then
     alias topm='htop -s PERCENT_MEM'
 fi
 
-# exa
-# TODO: Add sort by size aliases
-if command -v exa &> /dev/null
-then
-    alias ls='exa -F'
-    alias la='exa -lahF'
-    alias ll='exa -lhF'
-    alias lag='exa -lahF --git'
-    alias llg='exa -lhF --git'
-    alias lt='exa -T'
-    alias ltl='exa -T -L'
-
-    alias lsrt='exa -lahF --sort'
-    alias lsrtt='exa -lahF --sort=modified' # modified time by default: (modifed|accessed|changed)
-    alias lsrts='exa -lahF --sort=size'
-    alias lsrte='exa -lahF --sort=extension'
-    alias lsrtn'exa -lahF --sort=name'
-
-    alias l='exa -lahF'
-else
-    alias la='ls -al'
-    alias ll='ls -l'
-    if command -v tree &> /dev/null
-    then
-        alias lt='tree'
-        alias ltl='tree -L'
-    fi
-
-    alias lsrt='ls -al --sort'
-    alias lsrtt='ls -al --sort=time'
-    alias lsrts='ls -al --sort=size'
-    alias lsrte='ls -al --sort=extension'
-
-    alias l='ls -al'
-fi
-
 # bat
 if [[ $os == 'mac' ]] ;
 then
