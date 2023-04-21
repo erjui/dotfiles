@@ -45,7 +45,9 @@ nnoremap <silent> <leader>h :nohlsearch<CR>
 
 call plug#begin('~/.vim/plugged')
 source ~/.vim/plugins.vim
-source ~/.vim/plugins.local.vim
+if filereadable("~/.vim/plugins.local.vim")
+  source ~/.vim/plugins.local.vim
+endif
 call plug#end()
 
 " NERDTree
