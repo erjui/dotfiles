@@ -129,8 +129,8 @@ install_zsh() {
     wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
     wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
-    sudo mkdir -p /home/seongjae/.local/share/fonts
-    sudo mv MesloLGS* /home/seongjae/.local/share/fonts/
+    sudo mkdir -p ${HOME}/.local/share/fonts
+    sudo mv MesloLGS* ${HOME}/.local/share/fonts/
 
     fc-cache -f -v
     fc-list | grep -i MesloLGS
