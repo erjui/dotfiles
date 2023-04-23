@@ -43,6 +43,12 @@ nnoremap <leader>: :
 
 nnoremap <silent> <leader>h :nohlsearch<CR>
 
+" Run PlugInstall if there are missing plugins
+" @https://github.com/junegunn/vim-plug/wiki/tips
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 call plug#begin('~/.vim/plugged')
 source ~/.vim/plugins.vim
 if filereadable("~/.vim/plugins.local.vim")
