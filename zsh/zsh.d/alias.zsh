@@ -134,5 +134,5 @@ then
     alias gs='gpustat -pi'
 elif command -v nvidia-smi &> /dev/null
 then
-    alais gs='watch -n 0.1 -d nvidia-smi'
+    alias gs='watch -n 0.1 -d nvidia-smi'
 fi
