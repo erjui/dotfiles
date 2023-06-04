@@ -47,6 +47,9 @@ fi
 # Load everything
 zplug load
 
+# antidote
+source ~/.zsh/antidote/antidote.zsh
+
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zsh/fzf-git/fzf-git.sh ] && source ~/.zsh/fzf-git/fzf-git.sh

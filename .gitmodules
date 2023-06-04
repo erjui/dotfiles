@@ -23,3 +23,6 @@
 [submodule "zsh/prezto"]
 	path = zsh/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "zsh/antidote"]
+	path = zsh/antidote
+	url = https://github.com/mattmc3/antidote.git
