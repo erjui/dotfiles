@@ -36,6 +36,7 @@ install_packages() {
         visual-studio-code \
         nano \
         fasd \
+        watch \
     )
     # Install Homebrew packages
     for package in ${packages[@]}; do
