@@ -66,7 +66,7 @@ sh mac-setup.sh desktop
     - Run `sh linux-setup.sh dl`
 </details>
 
-# Setup ❄
+# Automated Configuration Setup ❄
 
 Execute the following command to effortlessly generate symlinks for all dotfiles and establish fundamental configurations,  
 Setup will be done through the command line:
