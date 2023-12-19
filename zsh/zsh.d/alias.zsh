@@ -76,9 +76,12 @@ fi
 
 # TODO: python virtual environment
 # anaconda
-alias ca='conda activate'
-alias cel='conda env list'
-alias cl='conda list'
+if command -v conda &> /dev/null
+then
+    alias ca='conda activate'
+    alias cel='conda env list'
+    alias cl='conda list'
+fi
 
 # htop
 if command -v htop &> /dev/null

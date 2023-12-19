@@ -30,12 +30,13 @@ install_packages() {
         ncal \
         rsync \
         tldr \
-        git wget \
+        git git-lfs wget \
         node \
         iterm2 \
         visual-studio-code \
         nano \
         fasd \
+        watch \
     )
     # Install Homebrew packages
     for package in ${packages[@]}; do
