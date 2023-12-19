@@ -30,7 +30,7 @@ install_packages() {
         ncal \
         rsync \
         tldr \
-        git wget \
+        git git-lfs wget \
         node \
         iterm2 \
         visual-studio-code \
