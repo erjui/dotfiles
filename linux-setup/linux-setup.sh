@@ -4,31 +4,45 @@ RED='\033[0;31m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
 
-system_check() {
-    # system check
-    echo -e "${RED}uname -a\n${NC}`uname -a`\n"
-    echo -e "${RED}hostnamectl \n${NC}`hostnamectl`\n"
-    echo -e "${RED}lscpu\n${NC}`lscpu`\n"
-    echo -e "${RED}lsmem\n${NC}`lsmem`\n"
-    echo -e "${RED}lspci -vnn | grep VGA -A 12\n${NC}`lspci -vnn | grep VGA -A 12`\n"
-    # sudo dmidecode
-    echo -e "Type any keyboard input to continue...\n"
-    read
+# system_check() {
+#     # system check
+#     echo -e "${RED}uname -a\n${NC}`uname -a`\n"
+#     echo -e "${RED}hostnamectl \n${NC}`hostnamectl`\n"
+#     echo -e "${RED}lscpu\n${NC}`lscpu`\n"
+#     echo -e "${RED}lsmem\n${NC}`lsmem`\n"
+#     echo -e "${RED}lspci -vnn | grep VGA -A 12\n${NC}`lspci -vnn | grep VGA -A 12`\n"
+#     # sudo dmidecode
+#     echo -e "Type any keyboard input to continue...\n"
+#     read
+# }
+
+install_sudo() {
+    # install sudo
+    echo -e "Install sudo..."
+    apt install -y sudo
 }
 
 install_basic_packages() {
     echo -e "Install Basic Packages..."
     local packages=( \
         build-essential man lspci curl less tree \
-        htop iotop nvtop gpustat \
-        vim tmux \
-        tig gh \
-        bat fd-find ripgrep fzf duf \
-        direnv sshpass \
-        asciinema neofetch \
-        ncal \
-        rsync \
-        tldr \
+        vim tmux htop git htop iotop nvtop rsync tldr \
+    )
+
+    # system update
+    apt update
+    apt upgrade
+    apt install sudo # remind. sudo command may not exist
+    for package in ${packages[@]}; do
+        sudo apt install -y $package
+    done
+}
+
+install_useful_packages() {
+    echo -e "Install Useful Packages..."
+    local packages=( \
+        bat fd-find ripgrep fzf duf direnv sshpass \
+        asciinema neofetch ncal tig gh \
     )
 
     # system update
@@ -167,8 +181,10 @@ install_node() {
 }
 
 install_desktop() {
-    system_check
+    # system_check
+    instll_sudo
     install_basic_packages
+    install_useful_packages
     install_script_packages
     install_zsh
     install_git
@@ -185,8 +201,10 @@ install_desktop() {
 }
 
 install_server() {
-    system_check
+    # system_check
+    install_sudo
     install_basic_packages
+    install_useful_packages
     install_script_packages
     install_zsh
     install_git
