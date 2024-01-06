@@ -48,6 +48,7 @@ echo "dotfile absolute path: $DOTFILES"
 
 symlink () {
     # zsh symlink
+    safe_link $DOTFILES/zsh/zfunc ~/.zfunc
     safe_link $DOTFILES/zsh/zlogin ~/.zlogin
     safe_link $DOTFILES/zsh/zlogout ~/.zlogout
     safe_link $DOTFILES/zsh/zprofile ~/.zprofile

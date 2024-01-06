@@ -31,6 +31,11 @@ zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "djui/alias-tips"
 
+# exa
+if command -v exa > /dev/null 2>&1; then
+    fpath=(~/.zfunc $fpath)
+fi
+
 # fasd
 if command -v fasd > /dev/null 2>&1; then
     eval "$(fasd --init auto)"

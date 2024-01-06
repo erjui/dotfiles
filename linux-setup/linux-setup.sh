@@ -125,6 +125,22 @@ install_exa() {
     cd .. && rm -rf exa
 }
 
+install_exa_manual() {
+    echo -e "Install exa manually..."
+    DIR=$(dirname $(readlink -f $0))
+    NEWDIR="$DIR/.."
+
+    wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
+    cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
+
+    cp bin/exa $NEWDIR/bin
+    sudo cp completions/exa.zsh $NEWDIR/zsh/zfunc/
+    sudo cp man/exa.1 $NEWDIR/man/man1/exa.1
+    sudo cp man/exa_colors.5 $NEWDIR/man/man5/exa_colors.5
+
+    cd .. && rm -rf exa
+}
+
 install_anaconda() {
     # https://www.anaconda.com/products/distribution#linux
     echo -e "Install Anaconda..."
@@ -202,7 +218,8 @@ install_desktop() {
     install_neovim
     # install_fasd
     install_fasd_manual
-    install_exa
+    # install_exa
+    install_exa_manual
     install_anaconda
     install_cargo
     install_sd
@@ -223,7 +240,8 @@ install_server() {
     install_neovim
     # install_fasd
     install_fasd_manual
-    install_exa
+    # install_exa
+    install_exa_manual
     install_anaconda
     # install_cargo
     # install_sd
