@@ -32,7 +32,9 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "djui/alias-tips"
 
 # fasd
-eval "$(fasd --init auto)"
+if command -v fasd > /dev/null 2>&1; then
+    eval "$(fasd --init auto)"
+fi
 
 # source .zsh files
 for f in ~/.zsh/zsh.d/*.zsh; do
