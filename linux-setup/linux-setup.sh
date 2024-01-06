@@ -100,6 +100,17 @@ install_fasd() {
     sudo apt install -y fasd
 }
 
+install_fasd_manual() {
+    echo -e "Install FASD..."
+    DIR=$(dirname $(readlink -f $0))
+    NEWDIR="$DIR/.."
+
+    wget https://github.com/clvv/fasd/tarball/1.0.1 -O fasd.tar.gz
+    tar -xvzf fasd.tar.gz
+    cd clvv-fasd-4822024 && PREFIX=$NEWDIR make install
+    cd .. && rm -rf clvv-fasd-4822024 && rm -rf fasd.tar.gz
+}
+
 install_exa() {
     # REMIND: need version update
     echo -e "Install EXA..."
@@ -189,7 +200,8 @@ install_desktop() {
     install_zsh
     install_git
     install_neovim
-    install_fasd
+    # install_fasd
+    install_fasd_manual
     install_exa
     install_anaconda
     install_cargo
@@ -209,7 +221,8 @@ install_server() {
     install_zsh
     install_git
     install_neovim
-    install_fasd
+    # install_fasd
+    install_fasd_manual
     install_exa
     install_anaconda
     # install_cargo
