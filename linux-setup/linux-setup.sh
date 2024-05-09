@@ -174,6 +174,42 @@ install_zsh() {
     sudo chsh -s $(which zsh)
 }
 
+install_zsh_build() {
+    # zsh requires ncurses
+    export CXXFLAGS=" -fPIC" CFLAGS=" -fPIC" CPPFLAGS="-I${HOME}/include" LDFLAGS="-L${HOME}/lib"
+    wget https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.2.tar.gz
+    tar -xzvf ncurses-6.2.tar.gz
+    cd ncurses-6.2
+    ./configure --prefix=$HOME --enable-shared
+    make
+    make install
+    cd .. && rm ncurses-6.2.tar.gz && rm -r ncurses-6.2
+
+    # install zsh
+    wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
+    mkdir zsh && unxz zsh.tar.xz && tar -xvf zsh.tar -C zsh --strip-components 1
+    cd zsh
+    ./configure --prefix=$HOME
+    make
+    make install
+    cd .. && rm zsh.tar && rm -r zsh
+
+    # font for p10k
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+
+    sudo mkdir -p ${HOME}/.local/share/fonts
+    sudo mv MesloLGS* ${HOME}/.local/share/fonts/
+
+    fc-cache -f -v
+    fc-list | grep -i MesloLGS
+
+    # setup default shell
+    echo -e "export SHELL=~/bin/zsh\nexec ~/bin/zsh -l" >> ~/.bash_profile
+}
+
 install_cargo() {
     # install rust package manager
     curl https://sh.rustup.rs -sSf | sh
