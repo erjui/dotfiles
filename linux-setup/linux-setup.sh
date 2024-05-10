@@ -16,31 +16,14 @@ NC='\033[0m'
 #     read
 # }
 
-install_sudo() {
-    # install sudo
-    echo -e "Install sudo..."
-    apt install -y sudo
-}
-
 install_basic_packages() {
     echo -e "Install Basic Packages..."
-    local packages=( \
+    local basic_packages=( \
         build-essential man lspci curl less tree \
         vim tmux htop git htop iotop nvtop rsync tldr \
     )
 
-    # system update
-    apt update
-    apt upgrade
-    apt install sudo # remind. sudo command may not exist
-    for package in ${packages[@]}; do
-        sudo apt install -y $package
-    done
-}
-
-install_useful_packages() {
-    echo -e "Install Useful Packages..."
-    local packages=( \
+    local extra_packages=( \
         bat fd-find ripgrep fzf duf direnv sshpass \
         asciinema neofetch ncal tig gh \
     )
@@ -48,8 +31,11 @@ install_useful_packages() {
     # system update
     apt update
     apt upgrade
-    apt install sudo # remind. sudo command may not exist
-    for package in ${packages[@]}; do
+    apt install -y sudo # install sudo if not exist
+    for package in ${basic_packages[@]}; do
+        sudo apt install -y $package
+    done
+    for package in ${extra_packages[@]}; do
         sudo apt install -y $package
     done
 }
