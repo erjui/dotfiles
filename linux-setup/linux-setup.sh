@@ -102,7 +102,7 @@ install_fasd_manual() {
     wget https://github.com/clvv/fasd/tarball/1.0.1 -O fasd.tar.gz
     tar -xvzf fasd.tar.gz
     cd clvv-fasd-4822024 && PREFIX=$NEWDIR make install
-    cd .. && rm -rf clvv-fasd-4822024 && rm -rf fasd.tar.gz
+    cd .. && rm -rf clvv-fasd-4822024 && rm fasd.tar.gz
 }
 
 install_exa() {
@@ -162,7 +162,7 @@ install_zsh() {
     sudo chsh -s $(which zsh)
 }
 
-install_zsh_build() {
+install_zsh_manual() {
     # zsh requires ncurses
     export CXXFLAGS=" -fPIC" CFLAGS=" -fPIC" CPPFLAGS="-I${HOME}/include" LDFLAGS="-L${HOME}/lib"
     wget https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.2.tar.gz
@@ -249,10 +249,8 @@ install_node_manual() {
 
 install_desktop() {
     # system_check
-    instll_sudo
     install_basic_packages
-    install_useful_packages
-    install_script_packages
+    # install_script_packages
     install_zsh
     install_git
     install_neovim
@@ -270,10 +268,8 @@ install_desktop() {
 
 install_server() {
     # system_check
-    install_sudo
     install_basic_packages
-    install_useful_packages
-    install_script_packages
+    # install_script_packages
     install_zsh
     install_git
     install_neovim
