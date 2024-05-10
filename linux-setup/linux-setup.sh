@@ -149,12 +149,6 @@ install_anaconda() {
     # rm -rf Anaconda3-2021.11-Linux-x86_64.sh
 }
 
-set_python_symlink() {
-    # python symbolic link
-    echo -e "Set python symbolic link..."
-    sudo ln -s /usr/bin/python3 /usr/bin/python
-}
-
 install_zsh() {
     # install zsh
     sudo apt install -y zsh
@@ -262,7 +256,6 @@ install_desktop() {
     install_guake # guake only needed for Desktop
     install_desktop_packages # desktop packages
     install_node
-    set_python_symlink
 }
 
 install_server() {
@@ -282,7 +275,6 @@ install_server() {
     # install_cargo
     # install_sd
     install_node
-    set_python_symlink
 }
 
 case $1
