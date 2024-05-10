@@ -51,17 +51,17 @@ install_desktop_packages() {
     done
 }
 
-install_script_packages() {
-    # packages for custom script
-    echo -e "Install Script Packages..."
-    local packages=( \
-        cpufrequtils xclip lmsensor hwinfo sshpass \
-    )
+# install_script_packages() {
+#     # packages for custom script
+#     echo -e "Install Script Packages..."
+#     local packages=( \
+#         cpufrequtils xclip lmsensor hwinfo sshpass \
+#     )
 
-    for package in ${packages[@]}; do
-        sudo apt install -y $package
-    done
-}
+#     for package in ${packages[@]}; do
+#         sudo apt install -y $package
+#     done
+# }
 
 install_git() {
     # https://launchpad.net/~git-core/+archive/ubuntu/ppa
