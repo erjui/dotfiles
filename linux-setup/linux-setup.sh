@@ -79,6 +79,14 @@ install_neovim() {
     sudo apt install -y neovim
 }
 
+install_neovim_manual() {
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+    tar -xvzf nvim-linux64.tar.gz
+    cd nvim-linux64
+    cp -r * $HOME/
+    cd.. && rm -rf nvim-linux64 && rm nvim-linux64.tar.gz
+}
+
 install_fasd() {
     echo -e "Install FASD..."
     sudo add-apt-repository ppa:aacebedo/fasd
