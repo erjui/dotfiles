@@ -120,9 +120,9 @@ install_exa_manual() {
     cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
 
     cp bin/exa $NEWDIR/bin
-    sudo cp completions/exa.zsh $NEWDIR/zsh/zfunc/
-    sudo cp man/exa.1 $NEWDIR/man/man1/exa.1
-    sudo cp man/exa_colors.5 $NEWDIR/man/man5/exa_colors.5
+    cp completions/exa.zsh $NEWDIR/zsh/zfunc/
+    cp man/exa.1 $NEWDIR/man/man1/exa.1
+    cp man/exa_colors.5 $NEWDIR/man/man5/exa_colors.5
 
     cd .. && rm -rf exa
 }
