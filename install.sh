@@ -43,6 +43,25 @@ safe_link(){
     fi
 }
 
+automatic_link() {
+    local src=$1
+    local dst=$2
+
+    if [[ -f $dst ]] || [[ -d $dst ]]; then
+        echo "$dst already exists. Backup $dst to $dst.bak."
+        mv $dst $dst.bak
+        ln -s $src $dst
+    elif [[ -L $dst ]]; then # if broken symlink
+        echo "$dst is broken symlink. Remove $dst and reassign."
+        rm $dst
+        ln -s $src $dst
+    else
+        mkdir -p $(dirname $dst)
+        echo "Link $src to $dst"
+        ln -s $src $dst
+    fi
+}
+
 DOTFILES=$(dirname $(readlink -f $0))
 echo "dotfile absolute path: $DOTFILES"
 
@@ -87,6 +106,49 @@ symlink () {
 
     # bin symlink
     safe_link $DOTFILES/bin ~/.bin
+}
+
+symlink_automatic () {
+    # zsh symlink
+    automatic_link $DOTFILES/zsh/zfunc ~/.zfunc
+    automatic_link $DOTFILES/zsh/zlogin ~/.zlogin
+    automatic_link $DOTFILES/zsh/zlogout ~/.zlogout
+    automatic_link $DOTFILES/zsh/zprofile ~/.zprofile
+    automatic_link $DOTFILES/zsh/zshenv ~/.zshenv
+    automatic_link $DOTFILES/zsh/zshrc ~/.zshrc
+    automatic_link $DOTFILES/zsh/p10k.zsh ~/.p10k.zsh
+    automatic_link $DOTFILES/zsh/prezto ~/.zprezto
+    automatic_link $DOTFILES/zsh/zpreztorc ~/.zpreztorc
+    automatic_link $DOTFILES/zsh/zplug ~/.zplug
+    automatic_link $DOTFILES/zsh ~/.zsh
+
+    # bash symlink
+    automatic_link $DOTFILES/bash/bashrc ~/.bashrc
+
+    # fzf symlink
+    automatic_link $DOTFILES/zsh/fzf ~/.fzf
+    automatic_link $DOTFILES/zsh/fzf.zsh ~/.fzf.zsh
+    automatic_link $DOTFILES/bash/fzf.bash ~/.fzf.bash
+
+    # vim, neovim symlink
+    automatic_link $DOTFILES/vim/vimrc ~/.vimrc
+    automatic_link $DOTFILES/vim ~/.vim
+    automatic_link $DOTFILES/nvim ~/.config/nvim
+
+    # nano symlink
+    automatic_link $DOTFILES/nano ~/.nano
+    automatic_link $DOTFILES/nano/nanorc ~/.nanorc
+
+    # tmux symlink
+    automatic_link $DOTFILES/tmux/tmux.conf ~/.tmux.conf
+    automatic_link $DOTFILES/tmux ~/.tmux
+
+    # git symlink
+    automatic_link $DOTFILES/git/.gitconfig ~/.gitconfig
+    automatic_link $DOTFILES/git/.gitignore ~/.gitignore
+
+    # bin symlink
+    automatic_link $DOTFILES/bin ~/.bin
 }
 
 set_git_secret_config () {
@@ -144,6 +206,26 @@ update_submodule() {
     git submodule update --init --recursive
 }
 
-symlink
-set_git_secret_config
-update_submodule
+case $1
+in
+    i*|interact)
+        echo -e "${RED}| ${YELLOW}interactive installation ${RED}| ${NC}\n"
+        symlink
+        set_git_secret_config
+        update_submodule
+        ;;
+    a*|auto)
+        echo -e "${RED}| ${YELLOW}automatic installation ${RED}| ${NC}\n"
+        symlink_automatic
+        update_submodule
+        ;;
+    h*|help|*)
+        echo "Usage: bash install.sh [OPTION]"
+        echo "Options:"
+        echo ""
+        echo "  interact    Install interactively"
+        echo "  auto        Install automatically"
+        echo "  help        Print this help"
+        echo ""
+esac
+
