@@ -28,10 +28,15 @@ install_basic_packages() {
         asciinema neofetch ncal tig gh \
     )
 
-    # system update
+    # system update in case sudo not exist
     apt update
     apt upgrade
     apt install -y sudo # install sudo if not exist
+
+    # system update in case sudo is required
+    sudo apt update
+    sudo apt upgrade
+
     for package in ${basic_packages[@]}; do
         sudo apt install -y $package
     done
