@@ -77,6 +77,9 @@ fpath+=~/.zsh/conda/conda-zsh-completion
 compinit conda
 # <<< conda initialize <<<
 
+fpath+=~/.zsh/conda/conda-zsh-completion
+compinit
+
 # iterm2 shell integration
 # @https://iterm2.com/documentation-shell-integration.html
 if [[ "$OSTYPE" == darwin* ]]; then
