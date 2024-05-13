@@ -68,6 +68,10 @@ install_desktop_packages() {
 #     done
 # }
 
+install_fzf() {
+    ~/dotfiles/zsh/fzf/install
+}
+
 install_git() {
     # https://launchpad.net/~git-core/+archive/ubuntu/ppa
     echo -e "Install Git..."
