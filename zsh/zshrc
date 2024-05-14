@@ -77,7 +77,7 @@ fpath+=~/.zsh/conda/conda-zsh-completion
 compinit conda
 # <<< conda initialize <<<
 
-fpath+=~/.zsh/conda/conda-zsh-completion
+fpath+=~/.zsh/docker/docker-zsh-completion
 compinit
 
 # iterm2 shell integration
