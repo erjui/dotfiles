@@ -68,6 +68,7 @@ then
     alias gcp='git cherry-pick'
     alias gcpa='git cherry-pick --abort'
     alias gcpc='git cherry-pick --continue'
+    alias gcpn='git cherry-pick --no-commit'
     alias gcs='git commit -S'
     alias gcsm='git commit -s -m'
     alias gcsquash='git commit --squash'
