@@ -2,7 +2,7 @@
 
 # 🧑‍💻 My Personal Dotfiles for Linux & MacOS Systems
 
-Welcome to my collection of **dotfiles** tailored for **Linux** and **MacOS** systems!  
+Welcome to my collection of **dotfiles** tailored for **Linux** and **MacOS** systems!
 
 <div align="left">
 	<img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white" />
@@ -36,7 +36,7 @@ Stay tuned for updates!
 
 # Installation on New System 🔥
 
-For a new system, whether it's Linux or MacOS, kickstart the process effortlessly!  
+For a new system, whether it's Linux or MacOS, kickstart the process effortlessly!
 The necessary packages will be installed automatically with the following commands:
 
 ### Clone the Repository
@@ -58,7 +58,7 @@ sh mac-setup.sh desktop
 
 <details>
   <summary>Linux Server Setup for Minimal or Deep Learning Framework Installation</summary>
-  
+
   - **Minimal Installation on Server:**
     - Run `sh linux-setup.sh server`
 
@@ -68,7 +68,7 @@ sh mac-setup.sh desktop
 
 # Automated Configuration Setup ❄
 
-Execute the following command to effortlessly generate symlinks for all dotfiles and establish fundamental configurations,  
+Execute the following command to effortlessly generate symlinks for all dotfiles and establish fundamental configurations,
 Setup will be done through the command line:
 
 ```bash
