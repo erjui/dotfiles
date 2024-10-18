@@ -42,6 +42,8 @@ The necessary packages will be installed automatically with the following comman
 ### Clone the Repository
 ```bash
 git clone https://github.com/erjui/dotfiles.git
+cd dotfiles
+git submodule update --init --recursive
 ```
 
 ### For Linux Users
