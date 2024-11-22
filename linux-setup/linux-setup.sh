@@ -114,34 +114,38 @@ install_fasd_manual() {
     cd .. && rm -rf clvv-fasd-4822024 && rm fasd.tar.gz
 }
 
-install_exa() {
-    # REMIND: need version update
-    echo -e "Install EXA..."
-    wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
-    cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
+# install_exa() {
+#     # REMIND: need version update
+#     echo -e "Install EXA..."
+#     wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
+#     cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
 
-    sudo cp bin/exa /usr/local/bin
-    sudo cp completions/exa.zsh /usr/local/share/zsh/site-functions/_exa
-    sudo cp man/exa.1 /usr/share/man/man1/exa.1
-    sudo cp man/exa_colors.5 /usr/share/man/man5/exa_colors.5
+#     sudo cp bin/exa /usr/local/bin
+#     sudo cp completions/exa.zsh /usr/local/share/zsh/site-functions/_exa
+#     sudo cp man/exa.1 /usr/share/man/man1/exa.1
+#     sudo cp man/exa_colors.5 /usr/share/man/man5/exa_colors.5
 
-    cd .. && rm -rf exa
-}
+#     cd .. && rm -rf exa
+# }
 
-install_exa_manual() {
-    echo -e "Install exa manually..."
-    DIR=$(dirname $(readlink -f $0))
-    NEWDIR="$DIR/.."
+# install_exa_manual() {
+#     echo -e "Install exa manually..."
+#     DIR=$(dirname $(readlink -f $0))
+#     NEWDIR="$DIR/.."
 
-    wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
-    cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
+#     wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip -P exa/
+#     cd exa && unzip -o exa-linux-x86_64-v0.10.1.zip
 
-    cp bin/exa $NEWDIR/bin
-    cp completions/exa.zsh $NEWDIR/zsh/zfunc/
-    cp man/exa.1 $NEWDIR/man/man1/exa.1
-    cp man/exa_colors.5 $NEWDIR/man/man5/exa_colors.5
+#     cp bin/exa $NEWDIR/bin
+#     cp completions/exa.zsh $NEWDIR/zsh/zfunc/
+#     cp man/exa.1 $NEWDIR/man/man1/exa.1
+#     cp man/exa_colors.5 $NEWDIR/man/man5/exa_colors.5
 
-    cd .. && rm -rf exa
+#     cd .. && rm -rf exa
+# }
+
+install_lsd() {
+    sudo apt install -y lsd
 }
 
 install_anaconda() {
@@ -266,7 +270,8 @@ install_desktop() {
     # install_fasd
     install_fasd_manual
     # install_exa
-    install_exa_manual
+    # install_exa_manual
+    install_lsd
     install_anaconda
     install_cargo
     install_sd
@@ -285,7 +290,8 @@ install_server() {
     # install_fasd
     install_fasd_manual
     # install_exa
-    install_exa_manual
+    # install_exa_manual
+    install_lsd
     install_anaconda
     # install_cargo
     # install_sd

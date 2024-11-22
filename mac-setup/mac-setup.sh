@@ -37,6 +37,7 @@ install_packages() {
         nano \
         fasd \
         watch \
+        lsd \
     )
     # Install Homebrew packages
     for package in ${packages[@]}; do
