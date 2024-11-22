@@ -73,7 +73,7 @@ then
     alias lsrtt='exa -lahF --sort=modified' # modified time by default: (modifed|accessed|changed)
     alias lsrts='exa -lahF --sort=size'
     alias lsrte='exa -lahF --sort=extension'
-    alias lsrtn'exa -lahF --sort=name'
+    alias lsrtn='exa -lahF --sort=name'
 
     alias l='exa -lahF'
 else
