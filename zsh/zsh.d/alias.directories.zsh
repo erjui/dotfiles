@@ -76,6 +76,22 @@ then
     alias lsrtn='exa -lahF --sort=name'
 
     alias l='exa -lahF'
+elif command -v lsd &> /dev/null
+then
+    alias ls='lsd'
+    alias la='lsd -la'
+    alias ll='lsd -l'
+    alias lt='lsd --tree'
+    alias ltl='lsd --tree --depth'
+
+    alias lsrt='lsd -la --sort' # [possible values: size, time, version, extension, git, none]
+    alias lsrtt='lsd -la --timesort'
+    alias lsrts='lsd -la --sizesort'
+    alias lsrte='lsd -la --extensionsort'
+    alias lsrtn='lsd -la --namesort'
+    alias lsrtg='lsd -la --sort git'
+
+    alias l='lsd -la'
 else
     alias la='ls -al'
     alias ll='ls -l'
