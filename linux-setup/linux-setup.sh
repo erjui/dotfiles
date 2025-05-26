@@ -4,6 +4,13 @@ RED='\033[0;31m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
 
+# Handle Ctrl+C gracefully
+trap ctrl_c INT
+function ctrl_c() {
+    echo -e "\n${YELLOW}Script terminated by user.${NC}"
+    exit 1
+}
+
 # system_check() {
 #     # system check
 #     echo -e "${RED}uname -a\n${NC}`uname -a`\n"
