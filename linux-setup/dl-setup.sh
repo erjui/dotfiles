@@ -33,8 +33,8 @@ echo -e "Install cudnn..."
 sudo apt-get install -y zlib1g # for Ubuntu users
 # sudo yum install zlib # for RHEL users
 tar -xzvf cudnn-11.4-linux-x64-v8.2.4.15.tgz
-sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
-sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64 
+sudo cp cuda/include/cudnn*.h /usr/local/cuda/include
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 
 # TODO: NCCL if needed
