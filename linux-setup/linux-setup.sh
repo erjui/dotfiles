@@ -24,7 +24,7 @@ readonly BASIC_PACKAGES=(
     build-essential man lspci curl less tree
     vim tmux htop git iotop nvtop rsync tldr
     bat fd-find ripgrep fzf duf direnv sshpass
-    asciinema neofetch ncal tig gh lsd
+    asciinema neofetch ncal tig gh lsd gdu
 )
 
 readonly DESKTOP_PACKAGES=(
