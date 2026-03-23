@@ -106,6 +106,12 @@ symlink () {
 
     # bin symlink
     safe_link $DOTFILES/bin ~/.bin
+
+    # Claude Code: only link managed files — do not replace ~/.claude entirely
+    # (Claude uses that dir for projects/, caches, history, etc.)
+    safe_link $DOTFILES/claude/settings.json ~/.claude/settings.json
+    safe_link $DOTFILES/claude/CLAUDE.md ~/.claude/CLAUDE.md
+    safe_link $DOTFILES/claude/rules ~/.claude/rules
 }
 
 symlink_automatic () {
@@ -149,6 +155,11 @@ symlink_automatic () {
 
     # bin symlink
     automatic_link $DOTFILES/bin ~/.bin
+
+    # Claude Code: only link managed files — do not replace ~/.claude entirely
+    automatic_link $DOTFILES/claude/settings.json ~/.claude/settings.json
+    automatic_link $DOTFILES/claude/CLAUDE.md ~/.claude/CLAUDE.md
+    automatic_link $DOTFILES/claude/rules ~/.claude/rules
 }
 
 set_git_secret_config () {
