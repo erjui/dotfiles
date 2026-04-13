@@ -59,9 +59,9 @@ alias python='python3'
 alias py='python'
 alias pip='pip3'
 
-alias cp='nocorrect cp -iv'
-alias mv='nocorrect mv -iv'
-alias rm='nocorrect rm -iv'
+# alias cp='nocorrect cp -iv'
+# alias mv='nocorrect mv -iv'
+# alias rm='nocorrect rm -iv'
 
 # TODO: Add du-dust, alternative for du
 alias ducsh='du -csh * 2>/dev/null | sort -hr'
